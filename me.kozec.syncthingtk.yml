@@ -65,9 +65,9 @@ modules:
       - mv go/src/github.com/syncthing/syncthing/bin/syncthing /app/bin
     sources:
       - type:   archive
-        url:    https://github.com/syncthing/syncthing/releases/download/v0.14.50/syncthing-source-v0.14.50.tar.gz
+        url:    https://github.com/syncthing/syncthing/releases/download/v0.14.51/syncthing-source-v0.14.51.tar.gz
         dest:   go/src/github.com/syncthing/syncthing
-        sha256: a5cc5b98a47ffae2bae12573ce6ab1695cb459274b620e574282ff1dff37527a
+        sha256: 10bf5de6f5f01dc605667185ac0b485548ae9088abaa8401fc0f3a2528b2f09e
 
 
   - name: syncthing-gtk
@@ -78,7 +78,7 @@ modules:
       - install -Dm644 -t /app/share/appdata scripts/syncthing-gtk.appdata.xml
     sources:
       - type:   archive
-        url:    https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.tar.gz
-        sha256: 586dc60460973c2664cee9f0fe6360b635a5b04278924f61c4bc9041723549f2
+        url:    https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.2.tar.gz
+        sha256: 9b0a25cd89217f07bcc1f6ed75c54351b71e8471a0aa6843754af5b2c54ac49e
     cleanup:
       - /share/pixmaps
