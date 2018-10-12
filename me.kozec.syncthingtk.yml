@@ -1,7 +1,7 @@
 app-id:              me.kozec.syncthingtk
 
 runtime:             org.gnome.Platform
-runtime-version:     '3.28'
+runtime-version:     '3.30'
 sdk:                 org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -21,12 +21,6 @@ finish-args:
   - --filesystem=host
   # Network access for sync
   - --share=network
-
-build-options:
-  cppflags: "-O2 -D_FORTIFY_SOURCE=2"
-  cflags: "-O2 -g -fstack-protector-strong"
-  cxxflags: "-O2 -g -fstack-protector-strong"
-  ldflags: "-fstack-protector-strong -Wl,-z,relro,-z,now" 
 
 # Cleanup after the python modules
 cleanup:
