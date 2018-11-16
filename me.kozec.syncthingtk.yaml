@@ -1,15 +1,15 @@
-app-id:              me.kozec.syncthingtk
+app-id: me.kozec.syncthingtk
 
-runtime:             org.gnome.Platform
-runtime-version:     '3.30'
-sdk:                 org.gnome.Sdk
+runtime: org.gnome.Platform
+runtime-version: '3.30'
+sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
 
-command:             syncthing-gtk
+command: syncthing-gtk
 rename-desktop-file: syncthing-gtk.desktop
 rename-appdata-file: syncthing-gtk.appdata.xml
-rename-icon:         syncthing-gtk
+rename-icon: syncthing-gtk
 
 finish-args:
   # X11 + XShm access
@@ -37,8 +37,8 @@ modules:
 
   - name: psmisc
     sources:
-      - type:   archive
-        url:    https://downloads.sourceforge.net/psmisc/psmisc-23.1.tar.xz
+      - type: archive
+        url: https://downloads.sourceforge.net/psmisc/psmisc-23.1.tar.xz
         sha256: 2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30
     cleanup:
       - /bin/fuser
@@ -49,7 +49,6 @@ modules:
       - /bin/pstree.x11
       - /share/man
 
-
   - name: syncthing
     buildsystem: simple
     build-commands:
@@ -59,11 +58,10 @@ modules:
         go run build.go -no-upgrade
       - mv go/src/github.com/syncthing/syncthing/bin/syncthing /app/bin
     sources:
-      - type:   archive
-        url:    https://github.com/syncthing/syncthing/releases/download/v0.14.52/syncthing-source-v0.14.52.tar.gz
-        dest:   go/src/github.com/syncthing/syncthing
+      - type: archive
+        url: https://github.com/syncthing/syncthing/releases/download/v0.14.52/syncthing-source-v0.14.52.tar.gz
+        dest: go/src/github.com/syncthing/syncthing
         sha256: 4954c2b05c60b6de29104d4783193a51164485cfa4a810c5a0696d72a83816c2
-
 
   - name: syncthing-gtk
     buildsystem: simple
@@ -72,8 +70,8 @@ modules:
       - python2 setup.py install --prefix=/app --optimize=1
       - install -Dm644 -t /app/share/appdata scripts/syncthing-gtk.appdata.xml
     sources:
-      - type:   archive
-        url:    https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.3.tar.gz
+      - type: archive
+        url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.3.tar.gz
         sha256: 058e13a8dd65c0024c92074dc5445b27278d71379d1843b7cbc84ee5c87afa12
     cleanup:
       - /share/pixmaps
