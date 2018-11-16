@@ -73,7 +73,7 @@ modules:
       - install -Dm644 -t /app/share/appdata scripts/syncthing-gtk.appdata.xml
     sources:
       - type:   archive
-        url:    https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.2.tar.gz
-        sha256: 9b0a25cd89217f07bcc1f6ed75c54351b71e8471a0aa6843754af5b2c54ac49e
+        url:    https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.3.tar.gz
+        sha256: 058e13a8dd65c0024c92074dc5445b27278d71379d1843b7cbc84ee5c87afa12
     cleanup:
       - /share/pixmaps
