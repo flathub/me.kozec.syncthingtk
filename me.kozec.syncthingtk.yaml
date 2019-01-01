@@ -59,9 +59,9 @@ modules:
       - mv go/src/github.com/syncthing/syncthing/bin/syncthing /app/bin
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v0.14.54/syncthing-source-v0.14.54.tar.gz
+        url: https://github.com/syncthing/syncthing/releases/download/v1.0.0/syncthing-source-v1.0.0.tar.gz
         dest: go/src/github.com/syncthing/syncthing
-        sha256: d97cf142bbb64b5f7801bdbb36e092d5b117e0e3ca09e2eba2c8c3acf964d2dd
+        sha256: 27435f9ef7c276736ec16781ad6b27fecb28053b8ffb16e0bae40c1e9bb62225
 
   - name: syncthing-gtk
     buildsystem: simple
