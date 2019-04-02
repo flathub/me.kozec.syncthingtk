@@ -54,7 +54,7 @@ modules:
         export GOPATH=$PWD/go
         cd go/src/github.com/syncthing/syncthing
         go run build.go -no-upgrade
-      - mv go/src/github.com/syncthing/syncthing/bin/syncthing /app/bin
+      - install -Dm755 -t /app/bin go/src/github.com/syncthing/syncthing/bin/syncthing
     sources:
       - type: archive
         url: https://github.com/syncthing/syncthing/releases/download/v1.1.1/syncthing-source-v1.1.1.tar.gz
