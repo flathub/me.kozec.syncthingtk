@@ -1,3 +1,4 @@
+---
 app-id: me.kozec.syncthingtk
 
 runtime: org.gnome.Platform
@@ -42,11 +43,7 @@ modules:
         sha256: 2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30
     cleanup:
       - /bin/fuser
-      - /bin/peekfd
-      - /bin/prtstat
-      - /bin/pslog
-      - /bin/pstree
-      - /bin/pstree.x11
+      - /bin/p*
       - /share/man
 
   - name: syncthing
@@ -57,12 +54,12 @@ modules:
         export GOPATH=$PWD/go
         cd go/src/github.com/syncthing/syncthing
         go run build.go -no-upgrade
-      - mv go/src/github.com/syncthing/syncthing/bin/syncthing /app/bin
+      - install -Dm755 -t /app/bin go/src/github.com/syncthing/syncthing/bin/syncthing
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v1.1.0/syncthing-source-v1.1.0.tar.gz
+        url: https://github.com/syncthing/syncthing/releases/download/v1.1.1/syncthing-source-v1.1.1.tar.gz
         dest: go/src/github.com/syncthing/syncthing
-        sha256: 6565fd30d704f7039d350c522875925acc287c8e45e18a7d42f22512860a7ac6
+        sha256: a796583c12894765394be38e8de858705491dc674289bb6936e68aeb4be23477
 
   - name: syncthing-gtk
     buildsystem: simple
