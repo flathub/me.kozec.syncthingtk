@@ -66,10 +66,15 @@ modules:
     build-commands:
       - python2 setup.py build
       - python2 setup.py install --prefix=/app --optimize=1
-      - install -Dm644 -t /app/share/appdata scripts/syncthing-gtk.appdata.xml
     sources:
       - type: archive
         url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.3.tar.gz
         sha256: 058e13a8dd65c0024c92074dc5445b27278d71379d1843b7cbc84ee5c87afa12
+      - type: patch
+        paths:
+          # AppData fixes from upstream
+          - patches/821d4690018600d96d0ec6532e512d25a741ee66.patch
+          - patches/8fd00ce49ecf92851dd1aef4bf3ed5e170d92104.patch
+          - patches/6404653130f7d8e5ddea6b9d9f9f7d193e86c2c1.patch
     cleanup:
       - /share/pixmaps
