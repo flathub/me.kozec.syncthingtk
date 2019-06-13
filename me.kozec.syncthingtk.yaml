@@ -29,13 +29,6 @@ cleanup:
   - /lib/pkgconfig
 
 modules:
-  - shared-modules/python2.7/python-2.7.json
-  - python2-pycairo.json
-  - python2-pygobject.json
-  - python2-setuptools_scm.json
-  - python2-python_dateutil.json
-  - python2-bcrypt.json
-
   - name: psmisc
     sources:
       - type: archive
@@ -60,6 +53,13 @@ modules:
         url: https://github.com/syncthing/syncthing/releases/download/v1.1.4/syncthing-source-v1.1.4.tar.gz
         dest: go/src/github.com/syncthing/syncthing
         sha256: d464884bfd92eac2f2dbc835c740ea7d5bd9e6ebd0bca7cda49682b0da4e6b5e
+
+  - shared-modules/python2.7/python-2.7.json
+  - python2-pycairo.json
+  - python2-pygobject.json
+  - python2-setuptools_scm.json
+  - python2-python_dateutil.json
+  - python2-bcrypt.json
 
   - name: syncthing-gtk
     buildsystem: simple
