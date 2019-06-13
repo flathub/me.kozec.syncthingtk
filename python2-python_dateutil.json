@@ -2,7 +2,7 @@
     "name": "python2-python_dateutil",
     "buildsystem": "simple",
     "build-commands": [
-        "pip2 install --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" python_dateutil"
+        "pip2 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" python_dateutil"
     ],
     "sources": [
         {
