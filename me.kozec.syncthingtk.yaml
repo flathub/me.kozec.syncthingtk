@@ -9,7 +9,6 @@ sdk-extensions:
 
 command: syncthing-gtk
 rename-desktop-file: syncthing-gtk.desktop
-rename-appdata-file: syncthing-gtk.appdata.xml
 rename-icon: syncthing-gtk
 
 finish-args:
