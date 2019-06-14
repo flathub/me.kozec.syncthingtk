@@ -2,18 +2,18 @@
     "name": "python2-pygobject",
     "buildsystem": "simple",
     "build-commands": [
-        "pip2 install --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" pygobject"
+        "pip2 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" pygobject"
     ],
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/a6/54/23d6cf3e8d8f1eb30e0e58f171b6f62b2ea75c024935492373639a1a08e4/pycairo-1.18.0.tar.gz",
-            "sha256": "abd42a4c9c2069febb4c38fe74bfc4b4a9d3a89fea3bc2e4ba7baff7a20f783f"
+            "url": "https://files.pythonhosted.org/packages/48/20/5e83af98eb897935bf7dc39455e892ba866feebb9b7c3b392982866f9958/pycairo-1.18.1.tar.gz",
+            "sha256": "70172e58b6bad7572a3518c26729b074acdde15e6fee6cbab6d3528ad552b786"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/8c/1f/76533985b054473ef6ab1ba4d9c00d62da502f8b43d3171ae588ec81ae93/PyGObject-3.30.4.tar.gz",
-            "sha256": "2d4423cbf169d50a3165f2dde21478a00215c7fb3f68d9d236af588c670980bb"
+            "url": "https://files.pythonhosted.org/packages/c1/36/c31a6ce9411b22a8ac0759c9b5ffda09368d5e0643450bb8ed83c271588c/PyGObject-3.32.1.tar.gz",
+            "sha256": "4165d9fb4157e69c76f29e52a6d73a39a804e18ad9ef0eede15efd9c57c52bf2"
         }
     ]
 }

@@ -1,0 +1,53 @@
+From 821d4690018600d96d0ec6532e512d25a741ee66 Mon Sep 17 00:00:00 2001
+From: Juraj Fiala <jurf@riseup.net>
+Date: Thu, 10 Jan 2019 01:30:22 +0100
+Subject: [PATCH] AppData: Use reverse-DNS ID
+
+https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-id-generic
+---
+ appimage-build.sh                                              | 3 ++-
+ ...cthing-gtk.appdata.xml => me.kozec.syncthingtk.appdata.xml} | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ rename scripts/{syncthing-gtk.appdata.xml => me.kozec.syncthingtk.appdata.xml} (90%)
+
+diff --git a/appimage-build.sh b/appimage-build.sh
+index ed5d28ef..ae1290cc 100755
+--- a/appimage-build.sh
++++ b/appimage-build.sh
+@@ -1,5 +1,6 @@
+ #!/bin/bash
+ APP="syncthing-gtk"
++APPID="me.kozec.syncthingtk"
+ EXEC="syncthing-gtk"
+ [ x"$BUILD_APPDIR" == "x" ] && BUILD_APPDIR=$(pwd)/appimage
+ 
+@@ -134,7 +135,7 @@ cp -H icons/${APP}.png ${BUILD_APPDIR}/${APP}.png
+ 
+ # Copy appdata.xml
+ mkdir -p ${BUILD_APPDIR}/usr/share/metainfo/
+-cp scripts/${APP}.appdata.xml ${BUILD_APPDIR}/usr/share/metainfo/${APP}.appdata.xml
++cp scripts/${APPID}.appdata.xml ${BUILD_APPDIR}/usr/share/metainfo/${APPID}.appdata.xml
+ 
+ # Copy AppRun script
+ cp scripts/appimage-AppRun.sh ${BUILD_APPDIR}/AppRun
+diff --git a/scripts/syncthing-gtk.appdata.xml b/scripts/me.kozec.syncthingtk.appdata.xml
+similarity index 90%
+rename from scripts/syncthing-gtk.appdata.xml
+rename to scripts/me.kozec.syncthingtk.appdata.xml
+index fde159b2..b2125768 100644
+--- a/scripts/syncthing-gtk.appdata.xml
++++ b/scripts/me.kozec.syncthingtk.appdata.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <component type="desktop">
+-  <id>syncthing-gtk.desktop</id>
++  <id>me.kozec.syncthingtk</id>
+   <name>Syncthing GTK</name>
+   <summary>GUI for Syncthing</summary>
+   <developer_name>kozec</developer_name>
+@@ -20,4 +20,5 @@
+       <image width="987" height="483">http://i.imgur.com/RTRgRdC.png</image>
+     </screenshot>
+   </screenshots>
++  <launchable type="desktop-id">syncthing-gtk.desktop</launchable>
+ </component>
