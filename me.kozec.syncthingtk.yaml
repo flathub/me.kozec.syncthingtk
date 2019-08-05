@@ -21,6 +21,8 @@ finish-args:
   - --filesystem=host
   # Network access for sync
   - --share=network
+  # System tray icon
+  - --talk-name=org.kde.StatusNotifierWatcher
 
 # Cleanup after the python modules
 cleanup:
@@ -53,6 +55,7 @@ modules:
         dest: go/src/github.com/syncthing/syncthing
         sha256: 0339877effdcf3bf8aa7d4d1e50b878992792e4752ff778f27788bf71eccecd0
 
+  - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
   - shared-modules/python2.7/python-2.7.json
   - python2-pycairo.json
   - python2-pygobject.json
