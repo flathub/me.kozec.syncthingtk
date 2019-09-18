@@ -51,9 +51,9 @@ modules:
       - install -Dm755 -t /app/bin go/src/github.com/syncthing/syncthing/bin/syncthing
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v1.2.2/syncthing-source-v1.2.2.tar.gz
+        url: https://github.com/syncthing/syncthing/releases/download/v1.3.0-rc.1/syncthing-linux-amd64-v1.3.0-rc.1.tar.gz
         dest: go/src/github.com/syncthing/syncthing
-        sha256: 7a6c6a427a84f33268f1e23ebf6e230abf140c01bb2476a7b34127c03b82b2f1
+        sha256: 637d1eaf26b212e044c02aa0b64048f7840585f2c61bd5a98ab10e072705f5f4
 
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
   - shared-modules/python2.7/python-2.7.json
