@@ -47,7 +47,7 @@ modules:
         . /usr/lib/sdk/golang/enable.sh
         export GOPATH=$PWD/go
         cd go/src/github.com/syncthing/syncthing
-        go run build.go -no-upgrade
+        env GOFLAGS=-mod=vendor go run build.go -no-upgrade
       - install -Dm755 -t /app/bin go/src/github.com/syncthing/syncthing/bin/syncthing
     sources:
       - type: archive
