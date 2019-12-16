@@ -1,0 +1,338 @@
+[
+    {
+        "type": "git",
+        "url": "https://github.com/AudriusButkevicius/go-nat-pmp",
+        "dest": "vendor/github.com/AudriusButkevicius/go-nat-pmp",
+        "commit": "452c97607362"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/AudriusButkevicius/pfilter",
+        "dest": "vendor/github.com/AudriusButkevicius/pfilter",
+        "commit": "c55ef6137fc6"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/AudriusButkevicius/recli",
+        "tag": "v0.0.5",
+        "dest": "vendor/github.com/AudriusButkevicius/recli"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/StackExchange/wmi",
+        "dest": "vendor/github.com/StackExchange/wmi",
+        "commit": "cbe66965904d"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/beorn7/perks",
+        "tag": "v1.0.1",
+        "dest": "vendor/github.com/beorn7/perks"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/bkaradzic/go-lz4",
+        "dest": "vendor/github.com/bkaradzic/go-lz4",
+        "commit": "7224d8d8f27e"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/calmh/xdr",
+        "tag": "v1.1.0",
+        "dest": "vendor/github.com/calmh/xdr"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/ccding/go-stun",
+        "dest": "vendor/github.com/ccding/go-stun",
+        "commit": "be486d185f3d"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/certifi/gocertifi",
+        "dest": "vendor/github.com/certifi/gocertifi",
+        "commit": "a5e0173ced67"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/cespare/xxhash",
+        "tag": "v2.1.0",
+        "dest": "vendor/github.com/cespare/xxhash/v2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/cheekybits/genny",
+        "tag": "v1.0.0",
+        "dest": "vendor/github.com/cheekybits/genny"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/chmduquesne/rollinghash",
+        "dest": "vendor/github.com/chmduquesne/rollinghash",
+        "commit": "a60f8e7142b5"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/cpuguy83/go-md2man",
+        "dest": "vendor/github.com/cpuguy83/go-md2man/v2",
+        "commit": "f79a8a8ca69d"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/d4l3k/messagediff",
+        "tag": "v1.2.1",
+        "dest": "vendor/github.com/d4l3k/messagediff"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/flynn-archive/go-shlex",
+        "dest": "vendor/github.com/flynn-archive/go-shlex",
+        "commit": "3f9db97f8568"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/getsentry/raven-go",
+        "tag": "v0.2.0",
+        "dest": "vendor/github.com/getsentry/raven-go"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/go-ole/go-ole",
+        "tag": "v1.2.4",
+        "dest": "vendor/github.com/go-ole/go-ole"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/gobwas/glob",
+        "tag": "v0.2.3",
+        "dest": "vendor/github.com/gobwas/glob"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/gogo/protobuf",
+        "tag": "v1.3.1",
+        "dest": "vendor/github.com/gogo/protobuf"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/golang/groupcache",
+        "dest": "vendor/github.com/golang/groupcache",
+        "commit": "869f871628b6"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/golang/protobuf",
+        "tag": "v1.3.2",
+        "dest": "vendor/github.com/golang/protobuf"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/golang/snappy",
+        "tag": "v0.0.1",
+        "dest": "vendor/github.com/golang/snappy"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/jackpal/gateway",
+        "tag": "v1.0.5",
+        "dest": "vendor/github.com/jackpal/gateway"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/kballard/go-shellquote",
+        "dest": "vendor/github.com/kballard/go-shellquote",
+        "commit": "95032a82bc51"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/lib/pq",
+        "tag": "v1.2.0",
+        "dest": "vendor/github.com/lib/pq"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/lucas-clemente/quic-go",
+        "tag": "v0.12.1",
+        "dest": "vendor/github.com/lucas-clemente/quic-go"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/marten-seemann/qtls",
+        "tag": "v0.3.2",
+        "dest": "vendor/github.com/marten-seemann/qtls"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/maruel/panicparse",
+        "tag": "v1.3.0",
+        "dest": "vendor/github.com/maruel/panicparse"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/mattn/go-isatty",
+        "tag": "v0.0.10",
+        "dest": "vendor/github.com/mattn/go-isatty"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/matttproud/golang_protobuf_extensions",
+        "tag": "v1.0.1",
+        "dest": "vendor/github.com/matttproud/golang_protobuf_extensions"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/minio/sha256-simd",
+        "tag": "v0.1.1",
+        "dest": "vendor/github.com/minio/sha256-simd"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/oschwald/geoip2-golang",
+        "tag": "v1.3.0",
+        "dest": "vendor/github.com/oschwald/geoip2-golang"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/oschwald/maxminddb-golang",
+        "tag": "v1.4.0",
+        "dest": "vendor/github.com/oschwald/maxminddb-golang"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/petermattis/goid",
+        "dest": "vendor/github.com/petermattis/goid",
+        "commit": "b0b1615b78e5"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/pkg/errors",
+        "tag": "v0.8.1",
+        "dest": "vendor/github.com/pkg/errors"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/prometheus/client_golang",
+        "tag": "v1.2.1",
+        "dest": "vendor/github.com/prometheus/client_golang"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/prometheus/client_model",
+        "dest": "vendor/github.com/prometheus/client_model",
+        "commit": "14fe0d1b01d4"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/prometheus/common",
+        "tag": "v0.7.0",
+        "dest": "vendor/github.com/prometheus/common"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/prometheus/procfs",
+        "tag": "v0.0.5",
+        "dest": "vendor/github.com/prometheus/procfs"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/rcrowley/go-metrics",
+        "dest": "vendor/github.com/rcrowley/go-metrics",
+        "commit": "cac0b30c2563"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/russross/blackfriday",
+        "tag": "v2.0.1",
+        "dest": "vendor/github.com/russross/blackfriday/v2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/sasha-s/go-deadlock",
+        "tag": "v0.2.0",
+        "dest": "vendor/github.com/sasha-s/go-deadlock"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/shirou/gopsutil",
+        "dest": "vendor/github.com/shirou/gopsutil",
+        "commit": "47ef3260b6bf"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/shurcooL/sanitized_anchor_name",
+        "tag": "v1.0.0",
+        "dest": "vendor/github.com/shurcooL/sanitized_anchor_name"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/syncthing/notify",
+        "dest": "vendor/github.com/syncthing/notify",
+        "commit": "69c7a957d3e2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/syndtr/goleveldb",
+        "dest": "vendor/github.com/syndtr/goleveldb",
+        "commit": "758128399b1d"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/thejerf/suture",
+        "tag": "v3.0.2",
+        "dest": "vendor/github.com/thejerf/suture"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/urfave/cli",
+        "tag": "v1.22.2",
+        "dest": "vendor/github.com/urfave/cli"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/vitrun/qart",
+        "dest": "vendor/github.com/vitrun/qart",
+        "commit": "bf64b92db6b0"
+    },
+    {
+        "type": "git",
+        "url": "https://go.googlesource.com/crypto",
+        "dest": "vendor/golang.org/x/crypto",
+        "commit": "9756ffdc2472"
+    },
+    {
+        "type": "git",
+        "url": "https://go.googlesource.com/net",
+        "dest": "vendor/golang.org/x/net",
+        "commit": "ba9fcec4b297"
+    },
+    {
+        "type": "git",
+        "url": "https://go.googlesource.com/sys",
+        "dest": "vendor/golang.org/x/sys",
+        "commit": "b09406accb47"
+    },
+    {
+        "type": "git",
+        "url": "https://go.googlesource.com/text",
+        "tag": "v0.3.2",
+        "dest": "vendor/golang.org/x/text"
+    },
+    {
+        "type": "git",
+        "url": "https://go.googlesource.com/time",
+        "dest": "vendor/golang.org/x/time",
+        "commit": "9d24e82272b4"
+    },
+    {
+        "type": "git",
+        "url": "https://gopkg.in/asn1-ber.v1",
+        "dest": "vendor/gopkg.in/asn1-ber.v1",
+        "commit": "f715ec2f112d"
+    },
+    {
+        "type": "git",
+        "url": "https://gopkg.in/ldap.v2",
+        "tag": "v2.5.1",
+        "dest": "vendor/gopkg.in/ldap.v2"
+    }
+]
