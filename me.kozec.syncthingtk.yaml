@@ -46,8 +46,8 @@ modules:
     build-options:
         env:
             GOBIN: /app/bin
-        build-args:
-            - --unshare=network
+        #build-args:
+        #    - --share=network
 
     build-commands:
       - |
