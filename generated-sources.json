@@ -1,12 +1,6 @@
 [
     {
         "type": "git",
-        "url": "https://github.com/AudriusButkevicius/go-nat-pmp",
-        "dest": "vendor/github.com/AudriusButkevicius/go-nat-pmp",
-        "commit": "452c97607362"
-    },
-    {
-        "type": "git",
         "url": "https://github.com/AudriusButkevicius/pfilter",
         "dest": "vendor/github.com/AudriusButkevicius/pfilter",
         "commit": "c55ef6137fc6"
@@ -139,6 +133,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/jackpal/go-nat-pmp",
+        "tag": "v1.0.2",
+        "dest": "vendor/github.com/jackpal/go-nat-pmp"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/kballard/go-shellquote",
         "dest": "vendor/github.com/kballard/go-shellquote",
         "commit": "95032a82bc51"
@@ -170,7 +170,7 @@
     {
         "type": "git",
         "url": "https://github.com/mattn/go-isatty",
-        "tag": "v0.0.10",
+        "tag": "v0.0.11",
         "dest": "vendor/github.com/mattn/go-isatty"
     },
     {
@@ -188,13 +188,13 @@
     {
         "type": "git",
         "url": "https://github.com/oschwald/geoip2-golang",
-        "tag": "v1.3.0",
+        "tag": "v1.4.0",
         "dest": "vendor/github.com/oschwald/geoip2-golang"
     },
     {
         "type": "git",
         "url": "https://github.com/oschwald/maxminddb-golang",
-        "tag": "v1.4.0",
+        "tag": "v1.6.0",
         "dest": "vendor/github.com/oschwald/maxminddb-golang"
     },
     {
@@ -206,7 +206,7 @@
     {
         "type": "git",
         "url": "https://github.com/pkg/errors",
-        "tag": "v0.8.1",
+        "tag": "v0.9.0",
         "dest": "vendor/github.com/pkg/errors"
     },
     {
@@ -309,7 +309,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "b09406accb47"
+        "commit": "c709ea063b76"
     },
     {
         "type": "git",

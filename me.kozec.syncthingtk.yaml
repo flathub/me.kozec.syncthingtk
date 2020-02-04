@@ -71,8 +71,8 @@ modules:
       #  sha256: 1ea48f168faaa55ef878db13bb56fcc15483fc3efa8f2980db93e97a87ad42c5
 
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v1.3.3-rc.1/syncthing-source-v1.3.3-rc.1.tar.gz
-        sha256: 5014e2bfcda7aef70d8c2aa8434835691b29dceb349f9df5007c5faccd4d336c
+        url: https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-source-v1.3.4.tar.gz
+        sha256: e40227f67b4317419900353be3f49f381ed36e41044df5d168b850f6b183ae08
 
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
