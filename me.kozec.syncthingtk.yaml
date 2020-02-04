@@ -60,16 +60,7 @@ modules:
       - install -Dm755 -t /app/bin syncthing
     sources:
       - generated-sources.json
-      #- type: git
-      #  url: https://github.com/AudriusButkevicius/go-nat-pmp
-      #  dest: go/src/github.com/AudriusButkevicius/go-nat-pmp
-      #  commit: 452c97607362
         
-      #- type: archive
-      #  url: https://github.com/syncthing/syncthing/releases/download/v1.3.2/syncthing-linux-amd64-v1.3.2.tar.gz
-      #  dest: binary
-      #  sha256: 1ea48f168faaa55ef878db13bb56fcc15483fc3efa8f2980db93e97a87ad42c5
-
       - type: archive
         url: https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-source-v1.3.4.tar.gz
         sha256: e40227f67b4317419900353be3f49f381ed36e41044df5d168b850f6b183ae08
