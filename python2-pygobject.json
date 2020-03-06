@@ -2,7 +2,7 @@
     "name": "python2-pygobject",
     "buildsystem": "simple",
     "build-commands": [
-        "pip2 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" pygobject"
+        "pip2 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pygobject"
     ],
     "sources": [
         {

@@ -1,0 +1,42 @@
+From 9458c37d7ff6192e1112a71f193272f482d4fb1c Mon Sep 17 00:00:00 2001
+From: Tobias Mueller <muelli@cryptobitch.de>
+Date: Tue, 17 Dec 2019 22:33:24 +0100
+Subject: [PATCH] appdata: added 0.9.4.4 release to appdata
+
+---
+ me.kozec.syncthingtk.appdata.xml | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+diff --git a/me.kozec.syncthingtk.appdata.xml b/me.kozec.syncthingtk.appdata.xml
+index 2c87d6a..c5378b8 100644
+--- a/me.kozec.syncthingtk.appdata.xml
++++ b/me.kozec.syncthingtk.appdata.xml
+@@ -47,6 +47,25 @@
+     <content_attribute id="social-info">moderate</content_attribute>
+   </content_rating>
+   <releases>
++    <release date="2019-08-04" version="v0.9.4.4">
++      <description>
++        <p>
++          Changes:
++        </p>
++        <ul>
++          <li>Creating ~/.config/autostart with wrong permissions</li>
++          <li>Correctly terminating Syncthing Daemon when terminated by signal</li>
++          <li>Crash when adding new folder</li>
++          <li>Displaying folders multiple times in device editor</li>
++          <li>i3 detection</li>
++          <li>Cosmetic receive-only folder fixes</li>
++          <li>Windows: Bypassing proxy when connecting to Syncthing Daemon (thanks @TrueXakeP)</li>
++          <li>Broken icon in Abot dialog (thanks @TrueXakeP)</li>
++          <li>AppData improvements (thanks @jurf)</li>
++          <li>Translation updates</li>
++        </ul>
++      </description>
++    </release>
+     <release date="2018-11-13" version="v0.9.4.3">
+       <description>
+         <p>
+-- 
+2.17.1
+

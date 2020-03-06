@@ -2,7 +2,7 @@
 app-id: me.kozec.syncthingtk
 
 runtime: org.gnome.Platform
-runtime-version: '3.32'
+runtime-version: '3.34'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -41,27 +41,37 @@ modules:
       - /share/man
 
   - name: syncthing
+    disabled: false
     buildsystem: simple
+    build-options:
+        env:
+            GOBIN: /app/bin
+        #build-args:
+        #    - --share=network
+
     build-commands:
       - |
         . /usr/lib/sdk/golang/enable.sh
         export GOPATH=$PWD/go
-        cd go/src/github.com/syncthing/syncthing
-        go run build.go -no-upgrade
-      - install -Dm755 -t /app/bin go/src/github.com/syncthing/syncthing/bin/syncthing
+        go version
+        go mod vendor
+        #go build -mod=vendor
+        env GOFLAGS=-mod=vendor go run build.go -no-upgrade build
+      - install -Dm755 -t /app/bin syncthing
     sources:
+      - generated-sources.json
+        
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v1.2.0/syncthing-source-v1.2.0.tar.gz
-        dest: go/src/github.com/syncthing/syncthing
-        sha256: 0339877effdcf3bf8aa7d4d1e50b878992792e4752ff778f27788bf71eccecd0
+        url: https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-source-v1.3.4.tar.gz
+        sha256: e40227f67b4317419900353be3f49f381ed36e41044df5d168b850f6b183ae08
 
+  - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
   - shared-modules/python2.7/python-2.7.json
+  # flatpak-pip-generator --python2 --no-build-isolation true  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
+  - python2-bcrypt.json
   - python2-pycairo.json
   - python2-pygobject.json
-  - python2-setuptools_scm.json
-  - python2-python_dateutil.json
-  - python2-bcrypt.json
 
   - name: syncthing-gtk
     buildsystem: simple
@@ -70,13 +80,13 @@ modules:
       - python2 setup.py install --prefix=/app --optimize=1
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.3.tar.gz
-        sha256: 058e13a8dd65c0024c92074dc5445b27278d71379d1843b7cbc84ee5c87afa12
+        url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.4.tar.gz
+        sha256: 896ddaaba4ad0b8f090c5a381a28b3da759932314562cdd50ca288543b03ddcc
+
       - type: patch
         paths:
-          # AppData fixes from upstream
-          - patches/821d4690018600d96d0ec6532e512d25a741ee66.patch
-          - patches/8fd00ce49ecf92851dd1aef4bf3ed5e170d92104.patch
-          - patches/6404653130f7d8e5ddea6b9d9f9f7d193e86c2c1.patch
+          - 0001-appdata-added-0.9.4.4-release-to-appdata.patch
+
     cleanup:
       - /share/pixmaps
+
