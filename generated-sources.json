@@ -206,7 +206,7 @@
     {
         "type": "git",
         "url": "https://github.com/pkg/errors",
-        "tag": "v0.9.0",
+        "tag": "v0.9.1",
         "dest": "vendor/github.com/pkg/errors"
     },
     {
@@ -265,6 +265,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/spaolacci/murmur3",
+        "tag": "v1.1.0",
+        "dest": "vendor/github.com/spaolacci/murmur3"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/syncthing/notify",
         "dest": "vendor/github.com/syncthing/notify",
         "commit": "69c7a957d3e2"
@@ -292,6 +298,18 @@
         "url": "https://github.com/vitrun/qart",
         "dest": "vendor/github.com/vitrun/qart",
         "commit": "bf64b92db6b0"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/willf/bitset",
+        "tag": "v1.1.10",
+        "dest": "vendor/github.com/willf/bitset"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/willf/bloom",
+        "tag": "v2.0.3",
+        "dest": "vendor/github.com/willf/bloom"
     },
     {
         "type": "git",
