@@ -91,6 +91,18 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/go-asn1-ber/asn1-ber",
+        "tag": "v1.3.1",
+        "dest": "vendor/github.com/go-asn1-ber/asn1-ber"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/go-ldap/ldap",
+        "tag": "v3.1.7",
+        "dest": "vendor/github.com/go-ldap/ldap/v3"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/go-ole/go-ole",
         "tag": "v1.2.4",
         "dest": "vendor/github.com/go-ole/go-ole"
@@ -128,7 +140,7 @@
     {
         "type": "git",
         "url": "https://github.com/jackpal/gateway",
-        "tag": "v1.0.5",
+        "tag": "v1.0.6",
         "dest": "vendor/github.com/jackpal/gateway"
     },
     {
@@ -152,13 +164,19 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go",
-        "tag": "v0.12.1",
+        "tag": "v0.14.4",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
         "type": "git",
+        "url": "https://github.com/marten-seemann/chacha20",
+        "tag": "v0.2.0",
+        "dest": "vendor/github.com/marten-seemann/chacha20"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/marten-seemann/qtls",
-        "tag": "v0.3.2",
+        "tag": "v0.4.1",
         "dest": "vendor/github.com/marten-seemann/qtls"
     },
     {
@@ -265,9 +283,9 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/spaolacci/murmur3",
-        "tag": "v1.1.0",
-        "dest": "vendor/github.com/spaolacci/murmur3"
+        "url": "https://github.com/twmb/murmur3",
+        "tag": "v1.1.3",
+        "dest": "vendor/github.com/twmb/murmur3"
     },
     {
         "type": "git",
@@ -315,7 +333,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/crypto",
         "dest": "vendor/golang.org/x/crypto",
-        "commit": "9756ffdc2472"
+        "commit": "2aa609cf4a9d"
     },
     {
         "type": "git",
@@ -340,17 +358,5 @@
         "url": "https://go.googlesource.com/time",
         "dest": "vendor/golang.org/x/time",
         "commit": "9d24e82272b4"
-    },
-    {
-        "type": "git",
-        "url": "https://gopkg.in/asn1-ber.v1",
-        "dest": "vendor/gopkg.in/asn1-ber.v1",
-        "commit": "f715ec2f112d"
-    },
-    {
-        "type": "git",
-        "url": "https://gopkg.in/ldap.v2",
-        "tag": "v2.5.1",
-        "dest": "vendor/gopkg.in/ldap.v2"
     }
 ]
