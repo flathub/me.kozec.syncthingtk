@@ -346,11 +346,5 @@
         "url": "https://go.googlesource.com/time",
         "dest": "vendor/golang.org/x/time",
         "commit": "9d24e82272b4"
-    },
-    {
-        "type": "git",
-        "url": "https://google.golang.org/protobuf",
-        "tag": "v1.21.0",
-        "dest": "vendor/google.golang.org/protobuf"
     }
 ]
