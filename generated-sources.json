@@ -85,6 +85,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/francoispqt/gojay",
+        "tag": "v1.2.13",
+        "dest": "vendor/github.com/francoispqt/gojay"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/getsentry/raven-go",
         "tag": "v0.2.0",
         "dest": "vendor/github.com/getsentry/raven-go"
@@ -98,7 +104,7 @@
     {
         "type": "git",
         "url": "https://github.com/go-ldap/ldap",
-        "tag": "v3.1.7",
+        "tag": "v3.1.10",
         "dest": "vendor/github.com/go-ldap/ldap/v3"
     },
     {
@@ -128,7 +134,7 @@
     {
         "type": "git",
         "url": "https://github.com/golang/protobuf",
-        "tag": "v1.3.2",
+        "tag": "v1.4.0",
         "dest": "vendor/github.com/golang/protobuf"
     },
     {
@@ -136,6 +142,12 @@
         "url": "https://github.com/golang/snappy",
         "tag": "v0.0.1",
         "dest": "vendor/github.com/golang/snappy"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/greatroar/blobloom",
+        "tag": "v0.2.1",
+        "dest": "vendor/github.com/greatroar/blobloom"
     },
     {
         "type": "git",
@@ -164,19 +176,13 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go",
-        "tag": "v0.14.4",
+        "tag": "v0.15.7",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
         "type": "git",
-        "url": "https://github.com/marten-seemann/chacha20",
-        "tag": "v0.2.0",
-        "dest": "vendor/github.com/marten-seemann/chacha20"
-    },
-    {
-        "type": "git",
         "url": "https://github.com/marten-seemann/qtls",
-        "tag": "v0.4.1",
+        "tag": "v0.9.1",
         "dest": "vendor/github.com/marten-seemann/qtls"
     },
     {
@@ -283,12 +289,6 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/twmb/murmur3",
-        "tag": "v1.1.3",
-        "dest": "vendor/github.com/twmb/murmur3"
-    },
-    {
-        "type": "git",
         "url": "https://github.com/syncthing/notify",
         "dest": "vendor/github.com/syncthing/notify",
         "commit": "69c7a957d3e2"
@@ -319,21 +319,9 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/willf/bitset",
-        "tag": "v1.1.10",
-        "dest": "vendor/github.com/willf/bitset"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/willf/bloom",
-        "tag": "v2.0.3",
-        "dest": "vendor/github.com/willf/bloom"
-    },
-    {
-        "type": "git",
         "url": "https://go.googlesource.com/crypto",
         "dest": "vendor/golang.org/x/crypto",
-        "commit": "2aa609cf4a9d"
+        "commit": "4bdfaf469ed5"
     },
     {
         "type": "git",
@@ -345,7 +333,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "c709ea063b76"
+        "commit": "d5e6a3e2c0ae"
     },
     {
         "type": "git",
