@@ -33,8 +33,8 @@ modules:
   - name: psmisc
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/psmisc/psmisc-23.1.tar.xz
-        sha256: 2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30
+        url: https://gitlab.com/psmisc/psmisc/-/archive/v23.1/psmisc-v23.1.tar.gz
+        sha256: c65a07488a4a3fad6cb9005cb0c812bb3f6154d7919c86dca07e954e134a658b
     cleanup:
       - /bin/fuser
       - /bin/p*
