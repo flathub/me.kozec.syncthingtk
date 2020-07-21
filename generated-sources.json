@@ -13,6 +13,18 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/Azure/go-ntlmssp",
+        "dest": "vendor/github.com/Azure/go-ntlmssp",
+        "commit": "66371956d46c"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/DataDog/zstd",
+        "tag": "v1.4.1",
+        "dest": "vendor/github.com/DataDog/zstd"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/StackExchange/wmi",
         "dest": "vendor/github.com/StackExchange/wmi",
         "commit": "cbe66965904d"
@@ -50,6 +62,12 @@
     {
         "type": "git",
         "url": "https://github.com/cespare/xxhash",
+        "tag": "v1.1.0",
+        "dest": "vendor/github.com/cespare/xxhash"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/cespare/xxhash",
         "tag": "v2.1.0",
         "dest": "vendor/github.com/cespare/xxhash/v2"
     },
@@ -79,6 +97,36 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/dchest/siphash",
+        "tag": "v1.2.1",
+        "dest": "vendor/github.com/dchest/siphash"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/dgraph-io/badger",
+        "tag": "v2.0.3",
+        "dest": "vendor/github.com/dgraph-io/badger/v2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/dgraph-io/ristretto",
+        "dest": "vendor/github.com/dgraph-io/ristretto",
+        "commit": "8f368f2f2ab3"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/dgryski/go-farm",
+        "dest": "vendor/github.com/dgryski/go-farm",
+        "commit": "6a90982ecee2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/dustin/go-humanize",
+        "tag": "v1.0.0",
+        "dest": "vendor/github.com/dustin/go-humanize"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/flynn-archive/go-shlex",
         "dest": "vendor/github.com/flynn-archive/go-shlex",
         "commit": "3f9db97f8568"
@@ -98,13 +146,13 @@
     {
         "type": "git",
         "url": "https://github.com/go-asn1-ber/asn1-ber",
-        "tag": "v1.3.1",
+        "tag": "v1.5.0",
         "dest": "vendor/github.com/go-asn1-ber/asn1-ber"
     },
     {
         "type": "git",
         "url": "https://github.com/go-ldap/ldap",
-        "tag": "v3.1.10",
+        "tag": "v3.2.0",
         "dest": "vendor/github.com/go-ldap/ldap/v3"
     },
     {
@@ -146,7 +194,7 @@
     {
         "type": "git",
         "url": "https://github.com/greatroar/blobloom",
-        "tag": "v0.2.1",
+        "tag": "v0.3.0",
         "dest": "vendor/github.com/greatroar/blobloom"
     },
     {
@@ -176,7 +224,7 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go",
-        "tag": "v0.15.7",
+        "tag": "v0.17.3",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
@@ -338,7 +386,7 @@
     {
         "type": "git",
         "url": "https://go.googlesource.com/text",
-        "tag": "v0.3.2",
+        "tag": "v0.3.3",
         "dest": "vendor/golang.org/x/text"
     },
     {
@@ -346,5 +394,11 @@
         "url": "https://go.googlesource.com/time",
         "dest": "vendor/golang.org/x/time",
         "commit": "9d24e82272b4"
+    },
+    {
+        "type": "git",
+        "url": "https://google.golang.org/protobuf",
+        "tag": "v1.23.0",
+        "dest": "vendor/google.golang.org/protobuf"
     }
 ]
