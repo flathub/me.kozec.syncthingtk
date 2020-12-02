@@ -1,4 +1,5 @@
 .flatpak-builder/
+fpbuilder/
 appdir/
 repo/
 *.flatpak

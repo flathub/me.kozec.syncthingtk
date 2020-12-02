@@ -54,16 +54,17 @@ modules:
         . /usr/lib/sdk/golang/enable.sh
         export GOPATH=$PWD/go
         go version
-        go mod vendor
+        # go mod vendor
         #go build -mod=vendor
+        #go mod download -json > download.json
         env GOFLAGS=-mod=vendor go run build.go -no-upgrade build
       - install -Dm755 -t /app/bin syncthing
     sources:
       - generated-sources.json
         
       - type: archive
-        url: https://github.com/syncthing/syncthing/releases/download/v1.6.1/syncthing-source-v1.6.1.tar.gz
-        sha256: f42518d453f7475022b5632420f21a6e0ab8d77f19c29b65ad582bc98e00a0a5
+        url: https://github.com/syncthing/syncthing/releases/download/v1.12.0/syncthing-source-v1.12.0.tar.gz
+        sha256: fb0b57581c59b050a6ad2fbde8058114dc380d7f27635eff91e8e1a86a3f1a29
 
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
