@@ -224,7 +224,7 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go",
-        "tag": "v0.18.1",
+        "tag": "v0.19.3",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
@@ -236,7 +236,7 @@
     {
         "type": "git",
         "url": "https://github.com/marten-seemann/qtls-go1-15",
-        "tag": "v0.1.0",
+        "tag": "v0.1.1",
         "dest": "vendor/github.com/marten-seemann/qtls-go1-15"
     },
     {
@@ -363,7 +363,7 @@
         "type": "git",
         "url": "https://github.com/thejerf/suture",
         "tag": "v4.0.0",
-        "dest": "vendor/github.com/thejerf/suture"
+        "dest": "vendor/github.com/thejerf/suture/v4"
     },
     {
         "type": "git",
