@@ -3,7 +3,7 @@
         "type": "git",
         "url": "https://github.com/AudriusButkevicius/pfilter",
         "dest": "vendor/github.com/AudriusButkevicius/pfilter",
-        "commit": "c55ef6137fc6"
+        "commit": "7468b85d810a"
     },
     {
         "type": "git",
@@ -193,6 +193,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/hashicorp/golang-lru",
+        "tag": "v0.5.1",
+        "dest": "vendor/github.com/hashicorp/golang-lru"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/jackpal/gateway",
         "tag": "v1.0.6",
         "dest": "vendor/github.com/jackpal/gateway"
@@ -338,8 +344,8 @@
     {
         "type": "git",
         "url": "https://github.com/shirou/gopsutil",
-        "tag": "v3.20.10",
-        "dest": "vendor/github.com/shirou/gopsutil"
+        "tag": "v3.20.11",
+        "dest": "vendor/github.com/shirou/gopsutil/v3"
     },
     {
         "type": "git",
@@ -351,7 +357,7 @@
         "type": "git",
         "url": "https://github.com/syncthing/notify",
         "dest": "vendor/github.com/syncthing/notify",
-        "commit": "9a0e44181151"
+        "commit": "17de26665ddc"
     },
     {
         "type": "git",
