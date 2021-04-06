@@ -35,9 +35,10 @@ modules:
         url: https://downloads.sourceforge.net/psmisc/psmisc-23.1.tar.xz
         sha256: 2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30
         x-checker-data:
-            type: anitya
-            project-id: 3721
-            url-template: https://downloads.sourceforge.net/psmisc/psmisc-$version.tar.xz
+          type: anitya
+          project-id: 3721
+          url-template: https://downloads.sourceforge.net/psmisc/psmisc-$version.tar.xz
+
 
     cleanup:
       - /bin/fuser
@@ -77,6 +78,10 @@ modules:
       - type: archive
         url: https://github.com/syncthing/syncthing/releases/download/v1.15.1/syncthing-source-v1.15.1.tar.gz
         sha256: b867c5056ad073bcb690853558bf9ef6c2356b2038527973cfee501bf9076911
+        x-checker-data:
+          type: anitya
+          project-id: 11814
+          url-template: https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-source-v$version.tar.gz
 
 
   - name: syncthing-gtk
@@ -88,6 +93,10 @@ modules:
       - type: archive
         url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.4.tar.gz
         sha256: 896ddaaba4ad0b8f090c5a381a28b3da759932314562cdd50ca288543b03ddcc
+        x-checker-data:
+          type: anitya
+          project-id: 17342
+          url-template: https://github.com/syncthing/syncthing-gtk/archive/v$version.tar.gz
 
       - type: patch
         paths:
