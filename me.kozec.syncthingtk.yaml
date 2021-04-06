@@ -40,6 +40,14 @@ modules:
       - /bin/p*
       - /share/man
 
+  - shared-modules/dbus-glib/dbus-glib-0.110.json
+  - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
+  - shared-modules/python2.7/python-2.7.json
+  # flatpak-pip-generator --python2 --no-build-isolation true  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
+  - python2-bcrypt.json
+  - python2-pycairo.json
+  - python2-pygobject.json
+
   - name: syncthing
     disabled: false
     buildsystem: simple
@@ -66,13 +74,6 @@ modules:
         url: https://github.com/syncthing/syncthing/releases/download/v1.15.1/syncthing-source-v1.15.1.tar.gz
         sha256: b867c5056ad073bcb690853558bf9ef6c2356b2038527973cfee501bf9076911
 
-  - shared-modules/dbus-glib/dbus-glib-0.110.json
-  - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
-  - shared-modules/python2.7/python-2.7.json
-  # flatpak-pip-generator --python2 --no-build-isolation true  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
-  - python2-bcrypt.json
-  - python2-pycairo.json
-  - python2-pygobject.json
 
   - name: syncthing-gtk
     buildsystem: simple
