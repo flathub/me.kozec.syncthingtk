@@ -32,8 +32,8 @@ modules:
   - name: psmisc
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/psmisc/psmisc-23.1.tar.xz
-        sha256: 2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30
+        url: https://downloads.sourceforge.net/psmisc/psmisc-23.4.tar.xz
+        sha256: 7f0cceeace2050c525f3ebb35f3ba01d618b8d690620580bdb8cd8269a0c1679
         x-checker-data:
           type: anitya
           project-id: 3721
