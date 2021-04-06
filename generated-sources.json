@@ -19,15 +19,15 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/DataDog/zstd",
-        "tag": "v1.4.1",
-        "dest": "vendor/github.com/DataDog/zstd"
-    },
-    {
-        "type": "git",
         "url": "https://github.com/StackExchange/wmi",
         "dest": "vendor/github.com/StackExchange/wmi",
         "commit": "cbe66965904d"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/alecthomas/kong",
+        "tag": "v0.2.12",
+        "dest": "vendor/github.com/alecthomas/kong"
     },
     {
         "type": "git",
@@ -58,12 +58,6 @@
         "url": "https://github.com/certifi/gocertifi",
         "dest": "vendor/github.com/certifi/gocertifi",
         "commit": "2c3bb06c6054"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/cespare/xxhash",
-        "tag": "v1.1.0",
-        "dest": "vendor/github.com/cespare/xxhash"
     },
     {
         "type": "git",
@@ -100,30 +94,6 @@
         "url": "https://github.com/dchest/siphash",
         "tag": "v1.2.2",
         "dest": "vendor/github.com/dchest/siphash"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/dgraph-io/badger",
-        "tag": "v2.0.3",
-        "dest": "vendor/github.com/dgraph-io/badger/v2"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/dgraph-io/ristretto",
-        "dest": "vendor/github.com/dgraph-io/ristretto",
-        "commit": "8f368f2f2ab3"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/dgryski/go-farm",
-        "dest": "vendor/github.com/dgryski/go-farm",
-        "commit": "6a90982ecee2"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/dustin/go-humanize",
-        "tag": "v1.0.0",
-        "dest": "vendor/github.com/dustin/go-humanize"
     },
     {
         "type": "git",
@@ -265,6 +235,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/maxbrunsfeld/counterfeiter",
+        "tag": "v6.3.0",
+        "dest": "vendor/github.com/maxbrunsfeld/counterfeiter/v6"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/minio/sha256-simd",
         "tag": "v0.1.1",
         "dest": "vendor/github.com/minio/sha256-simd"
@@ -274,6 +250,18 @@
         "url": "https://github.com/miscreant/miscreant.go",
         "dest": "vendor/github.com/miscreant/miscreant.go",
         "commit": "26d376326b75"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/niemeyer/pretty",
+        "dest": "vendor/github.com/niemeyer/pretty",
+        "commit": "a10e7caefd8e"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/onsi/gomega",
+        "tag": "v1.10.3",
+        "dest": "vendor/github.com/onsi/gomega"
     },
     {
         "type": "git",
@@ -357,7 +345,7 @@
         "type": "git",
         "url": "https://github.com/syncthing/notify",
         "dest": "vendor/github.com/syncthing/notify",
-        "commit": "17de26665ddc"
+        "commit": "f45149b04939"
     },
     {
         "type": "git",
@@ -399,7 +387,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "da207088b7d1"
+        "commit": "b64e53b001e4"
     },
     {
         "type": "git",
@@ -415,8 +403,20 @@
     },
     {
         "type": "git",
+        "url": "https://go.googlesource.com/tools",
+        "tag": "v0.1.0",
+        "dest": "vendor/golang.org/x/tools"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/protocolbuffers/protobuf-go",
         "tag": "v1.23.0",
         "dest": "vendor/google.golang.org/protobuf"
+    },
+    {
+        "type": "git",
+        "url": "https://gopkg.in/check.v1",
+        "dest": "vendor/gopkg.in/check.v1",
+        "commit": "038fdea0a05b"
     }
 ]
