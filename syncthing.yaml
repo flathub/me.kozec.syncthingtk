@@ -22,8 +22,8 @@ sources:
   - generated-sources.json
 
   - type: archive
-    url: https://github.com/syncthing/syncthing/releases/download/v1.16.0/syncthing-source-v1.16.0.tar.gz
-    sha256: 66a198cdd395fe80a1db43e5fcdf9a9d027ec7b9b8118895c82029134c21797b
+    url: https://github.com/syncthing/syncthing/releases/download/v1.16.1/syncthing-source-v1.16.1.tar.gz
+    sha256: 32a594975c64bacf2ff0921c8c775b6cf1e03f2f56253f3453a8df71f519b354
     x-checker-data:
       type: anitya
       project-id: 11814
