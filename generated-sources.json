@@ -2,8 +2,8 @@
     {
         "type": "git",
         "url": "https://github.com/AudriusButkevicius/pfilter.git",
-        "dest": "vendor/github.com/AudriusButkevicius/pfilter",
-        "commit": "e9aaf99ab213"
+        "tag": "v0.0.10",
+        "dest": "vendor/github.com/AudriusButkevicius/pfilter"
     },
     {
         "type": "git",
@@ -103,6 +103,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/fsnotify/fsnotify.git",
+        "tag": "v1.4.9",
+        "dest": "vendor/github.com/fsnotify/fsnotify"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/getsentry/raven-go.git",
         "tag": "v0.2.0",
         "dest": "vendor/github.com/getsentry/raven-go"
@@ -124,6 +130,12 @@
         "url": "https://github.com/go-ole/go-ole.git",
         "tag": "v1.2.4",
         "dest": "vendor/github.com/go-ole/go-ole"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/go-task/slim-sprig.git",
+        "dest": "vendor/github.com/go-task/slim-sprig",
+        "commit": "348f09dbbbc0"
     },
     {
         "type": "git",
@@ -206,20 +218,26 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go.git",
-        "tag": "v0.19.3",
+        "tag": "v0.22.0",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
         "type": "git",
-        "url": "https://github.com/marten-seemann/qtls.git",
-        "tag": "v0.10.0",
-        "dest": "vendor/github.com/marten-seemann/qtls"
+        "url": "https://github.com/marten-seemann/qtls-go1-15.git",
+        "tag": "v0.1.5",
+        "dest": "vendor/github.com/marten-seemann/qtls-go1-15"
     },
     {
         "type": "git",
-        "url": "https://github.com/marten-seemann/qtls-go1-15.git",
+        "url": "https://github.com/marten-seemann/qtls-go1-16.git",
         "tag": "v0.1.4",
-        "dest": "vendor/github.com/marten-seemann/qtls-go1-15"
+        "dest": "vendor/github.com/marten-seemann/qtls-go1-16"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/marten-seemann/qtls-go1-17.git",
+        "dest": "vendor/github.com/marten-seemann/qtls-go1-17",
+        "commit": "v0.1.0-rc.1"
     },
     {
         "type": "git",
@@ -250,6 +268,18 @@
         "url": "https://github.com/miscreant/miscreant.go.git",
         "dest": "vendor/github.com/miscreant/miscreant.go",
         "commit": "26d376326b75"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/nxadm/tail.git",
+        "tag": "v1.4.8",
+        "dest": "vendor/github.com/nxadm/tail"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/onsi/ginkgo.git",
+        "tag": "v1.16.4",
+        "dest": "vendor/github.com/onsi/ginkgo"
     },
     {
         "type": "git",
@@ -357,25 +387,25 @@
         "type": "git",
         "url": "https://go.googlesource.com/crypto",
         "dest": "vendor/golang.org/x/crypto",
-        "commit": "83a5a9bb288b"
+        "commit": "a769d52b0f97"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/mod",
-        "tag": "v0.3.0",
+        "tag": "v0.4.2",
         "dest": "vendor/golang.org/x/mod"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/net",
         "dest": "vendor/golang.org/x/net",
-        "commit": "89ef3d95e781"
+        "commit": "853a461950ff"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "d19ff857e887"
+        "commit": "f52c844e1c1c"
     },
     {
         "type": "git",
@@ -392,7 +422,7 @@
     {
         "type": "git",
         "url": "https://go.googlesource.com/tools",
-        "tag": "v0.1.0",
+        "tag": "v0.1.5",
         "dest": "vendor/golang.org/x/tools"
     },
     {
@@ -406,5 +436,11 @@
         "url": "https://go.googlesource.com/protobuf",
         "tag": "v1.26.0",
         "dest": "vendor/google.golang.org/protobuf"
+    },
+    {
+        "type": "git",
+        "url": "https://gopkg.in/tomb.v1",
+        "dest": "vendor/gopkg.in/tomb.v1",
+        "commit": "dd632973f1e7"
     }
 ]
