@@ -67,6 +67,9 @@ modules:
         url: https://gitlab.gnome.org/GNOME/libnotify.git
         tag: 0.7.9
         commit: 98a4bf483a69c6436311bcb9834d9d93235c96b7
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
 
   - syncthing.yaml
 
