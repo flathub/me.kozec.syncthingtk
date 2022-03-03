@@ -19,14 +19,8 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/StackExchange/wmi.git",
-        "tag": "v1.2.1",
-        "dest": "vendor/github.com/StackExchange/wmi"
-    },
-    {
-        "type": "git",
         "url": "https://github.com/alecthomas/kong.git",
-        "tag": "v0.2.17",
+        "tag": "v0.3.0",
         "dest": "vendor/github.com/alecthomas/kong"
     },
     {
@@ -34,12 +28,6 @@
         "url": "https://github.com/beorn7/perks.git",
         "tag": "v1.0.1",
         "dest": "vendor/github.com/beorn7/perks"
-    },
-    {
-        "type": "git",
-        "url": "https://github.com/bkaradzic/go-lz4.git",
-        "dest": "vendor/github.com/bkaradzic/go-lz4",
-        "commit": "7224d8d8f27e"
     },
     {
         "type": "git",
@@ -122,8 +110,8 @@
     {
         "type": "git",
         "url": "https://github.com/go-ole/go-ole.git",
-        "dest": "vendor/github.com/go-ole/go-ole",
-        "commit": "8b1f7f90f6b1"
+        "tag": "v1.2.6",
+        "dest": "vendor/github.com/go-ole/go-ole"
     },
     {
         "type": "git",
@@ -212,7 +200,7 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go.git",
-        "tag": "v0.23.0",
+        "tag": "v0.25.0",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
@@ -226,6 +214,12 @@
         "url": "https://github.com/marten-seemann/qtls-go1-17.git",
         "tag": "v0.1.0",
         "dest": "vendor/github.com/marten-seemann/qtls-go1-17"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/marten-seemann/qtls-go1-18.git",
+        "dest": "vendor/github.com/marten-seemann/qtls-go1-18",
+        "commit": "v0.1.0-beta.1"
     },
     {
         "type": "git",
@@ -289,9 +283,21 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/pierrec/lz4.git",
+        "tag": "v4.1.13",
+        "dest": "vendor/github.com/pierrec/lz4/v4"
+    },
+    {
+        "type": "git",
         "url": "https://github.com/pkg/errors.git",
         "tag": "v0.9.1",
         "dest": "vendor/github.com/pkg/errors"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/power-devops/perfstat.git",
+        "dest": "vendor/github.com/power-devops/perfstat",
+        "commit": "5aafc221ea8c"
     },
     {
         "type": "git",
@@ -338,7 +344,7 @@
     {
         "type": "git",
         "url": "https://github.com/shirou/gopsutil.git",
-        "tag": "v3.21.8",
+        "tag": "v3.21.12",
         "dest": "vendor/github.com/shirou/gopsutil/v3"
     },
     {
@@ -373,6 +379,12 @@
     },
     {
         "type": "git",
+        "url": "https://github.com/yusufpapurcu/wmi.git",
+        "tag": "v1.2.2",
+        "dest": "vendor/github.com/yusufpapurcu/wmi"
+    },
+    {
+        "type": "git",
         "url": "https://go.googlesource.com/crypto",
         "dest": "vendor/golang.org/x/crypto",
         "commit": "089bfa567519"
@@ -393,7 +405,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "92d5a993a665"
+        "commit": "97ac67df715c"
     },
     {
         "type": "git",
