@@ -32,8 +32,8 @@ modules:
   - name: psmisc
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/psmisc/psmisc-23.4.tar.xz
-        sha256: 7f0cceeace2050c525f3ebb35f3ba01d618b8d690620580bdb8cd8269a0c1679
+        url: https://downloads.sourceforge.net/psmisc/psmisc-23.5rc1.tar.xz
+        sha256: a1213aa338ca1406715aaaa9e8a653dfe2da5acc54e291c876b42247fe1d85ff
         x-checker-data:
           type: anitya
           project-id: 3721
@@ -52,7 +52,7 @@ modules:
   - python2-bcrypt.json
   - python2-pycairo.json
   - python2-pygobject.json
-  
+
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
     buildsystem: meson
@@ -65,8 +65,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libnotify.git
-        tag: 0.7.9
-        commit: 98a4bf483a69c6436311bcb9834d9d93235c96b7
+        tag: 0.7.10
+        commit: 2674c76f5389260c945caa90edc710dd3ba5fae3
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
