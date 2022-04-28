@@ -52,7 +52,7 @@ modules:
   - python2-bcrypt.json
   - python2-pycairo.json
   - python2-pygobject.json
-  
+
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
     buildsystem: meson
@@ -65,8 +65,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libnotify.git
-        tag: 0.7.9
-        commit: 98a4bf483a69c6436311bcb9834d9d93235c96b7
+        tag: 0.7.11
+        commit: e8a57f7245434603a0fda8b0b6a30017f08ce1e4
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
