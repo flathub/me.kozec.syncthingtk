@@ -200,26 +200,26 @@
     {
         "type": "git",
         "url": "https://github.com/lucas-clemente/quic-go.git",
-        "tag": "v0.25.0",
+        "tag": "v0.27.0",
         "dest": "vendor/github.com/lucas-clemente/quic-go"
     },
     {
         "type": "git",
         "url": "https://github.com/marten-seemann/qtls-go1-16.git",
-        "tag": "v0.1.4",
+        "tag": "v0.1.5",
         "dest": "vendor/github.com/marten-seemann/qtls-go1-16"
     },
     {
         "type": "git",
         "url": "https://github.com/marten-seemann/qtls-go1-17.git",
-        "tag": "v0.1.0",
+        "tag": "v0.1.1",
         "dest": "vendor/github.com/marten-seemann/qtls-go1-17"
     },
     {
         "type": "git",
         "url": "https://github.com/marten-seemann/qtls-go1-18.git",
-        "dest": "vendor/github.com/marten-seemann/qtls-go1-18",
-        "commit": "v0.1.0-beta.1"
+        "tag": "v0.1.1",
+        "dest": "vendor/github.com/marten-seemann/qtls-go1-18"
     },
     {
         "type": "git",
@@ -362,7 +362,7 @@
     {
         "type": "git",
         "url": "https://github.com/thejerf/suture.git",
-        "tag": "v4.0.1",
+        "tag": "v4.0.2",
         "dest": "vendor/github.com/thejerf/suture/v4"
     },
     {
@@ -422,7 +422,7 @@
     {
         "type": "git",
         "url": "https://go.googlesource.com/tools",
-        "tag": "v0.1.6",
+        "tag": "v0.1.7",
         "dest": "vendor/golang.org/x/tools"
     },
     {
