@@ -20,7 +20,7 @@
     {
         "type": "git",
         "url": "https://github.com/alecthomas/kong.git",
-        "tag": "v0.3.0",
+        "tag": "v0.6.1",
         "dest": "vendor/github.com/alecthomas/kong"
     },
     {
@@ -121,9 +121,9 @@
     },
     {
         "type": "git",
-        "url": "https://github.com/gobwas/glob.git",
-        "tag": "v0.2.3",
-        "dest": "vendor/github.com/gobwas/glob"
+        "url": "https://github.com/calmh/glob.git",
+        "dest": "vendor/github.com/calmh/glob",
+        "commit": "1d823af5017b"
     },
     {
         "type": "git",
@@ -284,7 +284,7 @@
     {
         "type": "git",
         "url": "https://github.com/pierrec/lz4.git",
-        "tag": "v4.1.13",
+        "tag": "v4.1.15",
         "dest": "vendor/github.com/pierrec/lz4/v4"
     },
     {
@@ -302,7 +302,7 @@
     {
         "type": "git",
         "url": "https://github.com/prometheus/client_golang.git",
-        "tag": "v1.11.0",
+        "tag": "v1.12.2",
         "dest": "vendor/github.com/prometheus/client_golang"
     },
     {
@@ -314,7 +314,7 @@
     {
         "type": "git",
         "url": "https://github.com/prometheus/common.git",
-        "tag": "v0.30.0",
+        "tag": "v0.32.1",
         "dest": "vendor/github.com/prometheus/common"
     },
     {
@@ -405,7 +405,7 @@
         "type": "git",
         "url": "https://go.googlesource.com/sys",
         "dest": "vendor/golang.org/x/sys",
-        "commit": "97ac67df715c"
+        "commit": "da31bd327af9"
     },
     {
         "type": "git",
