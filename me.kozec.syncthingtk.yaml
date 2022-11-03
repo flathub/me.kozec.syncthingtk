@@ -80,8 +80,8 @@ modules:
       - python2 setup.py install --prefix=/app --optimize=1
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.4.tar.gz
-        sha256: 896ddaaba4ad0b8f090c5a381a28b3da759932314562cdd50ca288543b03ddcc
+        url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
+        sha256: 24d34699acd58af0933f51476fe3af655238788be52c4f1c96c6d0ebb1706703
         x-checker-data:
           type: anitya
           project-id: 17342
