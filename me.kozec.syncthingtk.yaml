@@ -5,6 +5,7 @@ runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.rust-stable
 
 command: syncthing-gtk
 rename-desktop-file: syncthing-gtk.desktop
@@ -28,6 +29,19 @@ cleanup:
   - /include
   - /lib/pkgconfig
 
+
+build-options:
+    append-path: /usr/lib/sdk/rust-stable/bin
+    env:
+        CARGO_HOME: /run/build/python3-bcrypt/cargo
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
+        RUSTFLAGS: "-g"
+        # sccache hopefully speeds up subsequent compilations
+        RUSTC_WRAPPER: /app/bin/sccache
+        SCCACHE_DIR: /run/ccache/sccache/
+
+
 modules:
   - name: psmisc
     sources:
@@ -47,8 +61,49 @@ modules:
 
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
-  # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data --build-isolation  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
-  - python3-modules.json
+
+  # There's also https://github.com/flathub/org.thonny.Thonny/blob/7f38ec42e3f824e93fff7f1745632989c12985ed/org.thonny.Thonny.yaml#L212
+  - name: python3-bcrypt
+    buildsystem: simple
+    build-commands:
+      - echo $PATH
+      - rustc --version
+      - pip3 show setuptools
+
+      - python3 setup.py build
+      - python3 setup.py install "--prefix=${FLATPAK_DEST}"
+      #- pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" "--prefix=${FLATPAK_DEST}" .
+    sources:
+        - rust-sources.json
+        - type: git
+          url: https://github.com/pyca/bcrypt.git
+          # 4.0.1 is broken, because it misses the base64 dependency.
+          #tag: 4.0.1
+          #commit: 98141be0809acd4accd1193f2c3b8cb9e29f022a
+          commit: ef701cd546a03ec8681df2eb4e3ea7390b621cfd
+    modules:
+        # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data  wheel pip python-dateutil  setuptools setuptools_scm cffi 'setuptools_rust' 'bcrypt >= 4'
+        - python3-modules.json
+
+        # setup caching
+        - name: sccache
+          buildsystem: simple
+          build-commands:
+              - install -Dma+rwx sccache /app/bin/sccache
+          cleanup:
+              - /bin/sccache
+          sources:
+              - type: archive
+                url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-x86_64-unknown-linux-musl.tar.gz
+                sha256: e5d03a9aa3b9fac7e490391bbe22d4f42c840d31ef9eaf127a03101930cbb7ca
+                only-arches: ["x86_64"]
+
+              - type: archive
+                url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-aarch64-unknown-linux-musl.tar.gz
+                sha256: 90d91d21a767e3f558196dbd52395f6475c08de5c4951a4c8049575fa6894489
+                only-arches: ["aarch64"]
+    
+
 
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
