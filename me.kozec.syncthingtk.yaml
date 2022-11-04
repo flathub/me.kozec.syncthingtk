@@ -128,8 +128,7 @@ modules:
   - name: syncthing-gtk
     buildsystem: simple
     build-commands:
-      - python3 setup.py build
-      - python3 setup.py install --prefix=/app --optimize=1
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "." --no-build-isolation
     sources:
       - type: archive
         url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
