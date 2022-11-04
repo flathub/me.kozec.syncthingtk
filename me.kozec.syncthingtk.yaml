@@ -1,8 +1,8 @@
 app-id: me.kozec.syncthingtk
 
-runtime: org.freedesktop.Platform
-runtime-version: '22.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: '43'
+sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -59,6 +59,14 @@ modules:
       - /bin/p*
       - /share/man
 
+  - name: gobject-introspection
+    disabled: true
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
+        sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
+        
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
 
