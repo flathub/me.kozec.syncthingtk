@@ -137,6 +137,10 @@ modules:
     buildsystem: simple
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "." --no-build-isolation
+      # Trying to adjust the filenames to have them exported so that the tray can be shown properly
+      - for icon in /app/share/icons/hicolor/*/status/si-syncthing*.png; do cp -ar --reflink=auto $icon ${icon/si-syncthing/me.kozec.syncthingtk}; done
+      - for icon in /app/share/icons/hicolor/*/emblems/*-active.png; do cp -ar --reflink=auto $icon ${icon/emblem-syncthing/me.kozec.syncthingtk}; done
+       
     sources:
       - type: archive
         url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
