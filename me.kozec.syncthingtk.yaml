@@ -47,11 +47,8 @@ modules:
 
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
-  - shared-modules/python2.7/python-2.7.json
-  # flatpak-pip-generator --python2 --no-build-isolation true  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
-  - python2-bcrypt.json
-  - python2-pycairo.json
-  - python2-pygobject.json
+  # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data --build-isolation  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
+  - python3-modules.json
 
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
@@ -76,8 +73,8 @@ modules:
   - name: syncthing-gtk
     buildsystem: simple
     build-commands:
-      - python2 setup.py build
-      - python2 setup.py install --prefix=/app --optimize=1
+      - python3 setup.py build
+      - python3 setup.py install --prefix=/app --optimize=1
     sources:
       - type: archive
         url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
