@@ -17,9 +17,10 @@ build-commands:
     #go mod download -json > download.json
     env GOFLAGS=-mod=vendor go run build.go -no-upgrade build
   - install -Dm755 -t /app/bin syncthing
+  - syncthing -version
 
 sources:
-  - generated-sources.json
+  - go-sources.json
 
   - type: archive
     url: https://github.com/syncthing/syncthing/releases/download/v1.22.1/syncthing-source-v1.22.1.tar.gz

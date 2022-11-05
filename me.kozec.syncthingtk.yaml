@@ -1,10 +1,11 @@
 app-id: me.kozec.syncthingtk
 
-runtime: org.freedesktop.Platform
-runtime-version: '22.08'
-sdk: org.freedesktop.Sdk
+runtime: org.gnome.Platform
+runtime-version: '43'
+sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.rust-stable
 
 command: syncthing-gtk
 rename-desktop-file: syncthing-gtk.desktop
@@ -28,6 +29,19 @@ cleanup:
   - /include
   - /lib/pkgconfig
 
+
+build-options:
+    append-path: /usr/lib/sdk/rust-stable/bin
+    env:
+        CARGO_HOME: /run/build/python3-bcrypt/cargo
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
+        RUSTFLAGS: "-g"
+        # sccache hopefully speeds up subsequent compilations
+        RUSTC_WRAPPER: /app/bin/sccache
+        SCCACHE_DIR: /run/ccache/sccache/
+
+
 modules:
   - name: psmisc
     sources:
@@ -45,13 +59,59 @@ modules:
       - /bin/p*
       - /share/man
 
+  - name: gobject-introspection
+    disabled: true
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
+        sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
+        
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
-  - shared-modules/python2.7/python-2.7.json
-  # flatpak-pip-generator --python2 --no-build-isolation true  wheel pip python-dateutil  setuptools setuptools_scm cffi bcrypt
-  - python2-bcrypt.json
-  - python2-pycairo.json
-  - python2-pygobject.json
+
+  # There's also https://github.com/flathub/org.thonny.Thonny/blob/7f38ec42e3f824e93fff7f1745632989c12985ed/org.thonny.Thonny.yaml#L212
+  - name: python3-bcrypt
+    buildsystem: simple
+    build-commands:
+      - echo $PATH
+      - rustc --version
+      - pip3 show setuptools
+
+      - python3 setup.py build
+      - python3 setup.py install "--prefix=${FLATPAK_DEST}"
+      #- pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" "--prefix=${FLATPAK_DEST}" .
+    sources:
+        - rust-sources.json
+        - type: git
+          url: https://github.com/pyca/bcrypt.git
+          # 4.0.1 is broken, because it misses the base64 dependency.
+          #tag: 4.0.1
+          #commit: 98141be0809acd4accd1193f2c3b8cb9e29f022a
+          commit: ef701cd546a03ec8681df2eb4e3ea7390b621cfd
+    modules:
+        # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data  wheel pip python-dateutil  setuptools setuptools_scm cffi 'setuptools_rust' 'bcrypt >= 4'
+        - python3-modules.json
+
+        # setup caching
+        - name: sccache
+          buildsystem: simple
+          build-commands:
+              - install -Dma+rwx sccache /app/bin/sccache
+          cleanup:
+              - /bin/sccache
+          sources:
+              - type: archive
+                url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-x86_64-unknown-linux-musl.tar.gz
+                sha256: e5d03a9aa3b9fac7e490391bbe22d4f42c840d31ef9eaf127a03101930cbb7ca
+                only-arches: ["x86_64"]
+
+              - type: archive
+                url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-aarch64-unknown-linux-musl.tar.gz
+                sha256: 90d91d21a767e3f558196dbd52395f6475c08de5c4951a4c8049575fa6894489
+                only-arches: ["aarch64"]
+    
+
 
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
@@ -65,8 +125,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libnotify.git
-        tag: 0.7.12
-        commit: 8162b1d397deb77e7b615dab36437cd43e96fbc6
+        tag: 0.8.1
+        commit: 650f2f123e75469b85d81fbca66e17b744a7714b
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -76,12 +136,15 @@ modules:
   - name: syncthing-gtk
     buildsystem: simple
     build-commands:
-      - python2 setup.py build
-      - python2 setup.py install --prefix=/app --optimize=1
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "." --no-build-isolation
+      # Trying to adjust the filenames to have them exported so that the tray can be shown properly
+      - for icon in /app/share/icons/hicolor/*/status/si-syncthing*.png; do cp -ar --reflink=auto $icon ${icon/si-syncthing/me.kozec.syncthingtk}; done
+      - for icon in /app/share/icons/hicolor/*/emblems/*-active.png; do cp -ar --reflink=auto $icon ${icon/emblem-syncthing/me.kozec.syncthingtk}; done
+       
     sources:
       - type: archive
-        url: https://github.com/syncthing/syncthing-gtk/archive/v0.9.4.4.tar.gz
-        sha256: 896ddaaba4ad0b8f090c5a381a28b3da759932314562cdd50ca288543b03ddcc
+        url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
+        sha256: 24d34699acd58af0933f51476fe3af655238788be52c4f1c96c6d0ebb1706703
         x-checker-data:
           type: anitya
           project-id: 17342
