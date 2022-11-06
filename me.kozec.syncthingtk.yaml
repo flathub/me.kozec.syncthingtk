@@ -1,8 +1,8 @@
 app-id: me.kozec.syncthingtk
 
-runtime: org.gnome.Platform
-runtime-version: '43'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -59,14 +59,42 @@ modules:
       - /bin/p*
       - /share/man
 
-  - name: gobject-introspection
-    disabled: true
+
+  - name: pygobject
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
-        sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
+        url: https://download.gnome.org/sources/pygobject/3.42/pygobject-3.42.2.tar.xz
+        sha256: ade8695e2a7073849dd0316d31d8728e15e1e0bc71d9ff6d1c09e86be52bc957
+        x-checker-data:
+          type: gnome
+          name: pygobject
+          stable-only: true
+
+    modules:
+      - name: gobject-introspection
+        buildsystem: meson
+        sources:
+            - type: archive
+              url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
+              sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
         
+
+      - name: pycairo
+        buildsystem: meson
+        sources:
+          - type: archive
+            url: https://github.com/pygobject/pycairo/releases/download/v1.21.0/pycairo-1.21.0.tar.gz
+            sha256: 251907f18a552df938aa3386657ff4b5a4937dde70e11aa042bc297957f4b74b
+            x-checker-data:
+              type: json
+              url: https://api.github.com/repos/pygobject/pycairo/releases/latest
+              version-query: |
+                .tag_name | sub("^v"; "")
+              url-query: |
+                .assets | map(select(.name=="pycairo-\($version).tar.gz")) | first | .browser_download_url
+
+
   - shared-modules/dbus-glib/dbus-glib-0.110.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
 
