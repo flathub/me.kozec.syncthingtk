@@ -144,13 +144,13 @@ modules:
         $icon ${icon/emblem-syncthing/me.kozec.syncthingtk}; done
 
     sources:
-      - type: archive
-        url: https://github.com/syncthing-gtk/syncthing-gtk/archive/refs/tags/0.9.4.5.tar.gz
-        sha256: 42758c3490a7f2ab1323c2ee6a6bef460ceb13b1f5d412c02f3b9347e798573c
+      - type: git
+        url: https://github.com/syncthing-gtk/syncthing-gtk.git
+        commit: 3118560fe15e7b2c638c09c66c9be21725bfe2dc
+        tag: 0.9.4.5
         x-checker-data:
-          type: anitya
-          project-id: 17342
-          url-template: https://github.com/syncthing-gtk/syncthing-gtk/archive/refs/tags/$version.tar.gz
+          type: git
+          pattern: '\d\.\d\.\d\.\d'
 
     cleanup:
       - /share/pixmaps
