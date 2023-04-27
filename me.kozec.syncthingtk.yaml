@@ -144,17 +144,16 @@ modules:
         $icon ${icon/emblem-syncthing/me.kozec.syncthingtk}; done
 
     sources:
-      - type: archive
-        url: https://github.com/syncthing-gtk/syncthing-gtk/archive/v0.9.4.4.2.tar.gz
-        sha256: 24d34699acd58af0933f51476fe3af655238788be52c4f1c96c6d0ebb1706703
+      - type: git
+        url: https://github.com/syncthing-gtk/syncthing-gtk.git
+        commit: 3118560fe15e7b2c638c09c66c9be21725bfe2dc
+        tag: 0.9.4.5
         x-checker-data:
-          type: anitya
-          project-id: 17342
-          url-template: https://github.com/syncthing-gtk/syncthing-gtk/archive/v$version.tar.gz
+          type: git
+          pattern: '\d\.\d\.\d\.\d'
 
       - type: patch
-        paths:
-          - 0001-appdata-added-0.9.4.4-release-to-appdata.patch
+        path:  0001-appdata-remove-URL-to-make-the-validator-stop-compla.patch
 
     cleanup:
       - /share/pixmaps
