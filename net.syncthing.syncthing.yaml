@@ -10,7 +10,12 @@ command: syncthing
 
 finish-args:
   # Folders for syncing can be anywhere
-  - --filesystem=host
+  - --filesystem=home
+  - --filesystem=/media
+  - --filesystem=/mnt
+  - --filesystem=/run/media
+  - --filesystem=/var/run/media
+  - --filesystem=/var/mnt
   # Network access for sync
   - --share=network
 
