@@ -128,8 +128,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/57/db/7cc20ad859bc2a6a0c60e497c4be19784a8d14ff8e53a6da6ee4a6edd500/setuptools_rust-1.6.0-py3-none-any.whl",
-                    "sha256": "e28ae09fb7167c44ab34434eb49279307d611547cb56cb9789955cdb54a1aed9",
+                    "url": "https://files.pythonhosted.org/packages/5b/be/8d88f5982d61fefa2cbc633b167d2553875169eee136b584089667c37e93/setuptools_rust-1.7.0-py3-none-any.whl",
+                    "sha256": "071099885949132a2180d16abf907b60837e74b4085047ba7e9c0f5b365310c1",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_rust",
