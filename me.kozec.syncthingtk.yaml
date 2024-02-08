@@ -89,10 +89,8 @@ modules:
           #tag: 4.0.1
           #commit: 98141be0809acd4accd1193f2c3b8cb9e29f022a
         commit: ef701cd546a03ec8681df2eb4e3ea7390b621cfd
-    modules:
-        # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data  wheel pip python-dateutil  setuptools setuptools_scm cffi 'setuptools_rust' 'bcrypt >= 4'
-      - python3-modules.json
 
+    modules:
         # setup caching
       - name: sccache
         buildsystem: simple
@@ -111,6 +109,9 @@ modules:
             sha256: 90d91d21a767e3f558196dbd52395f6475c08de5c4951a4c8049575fa6894489
             only-arches: [aarch64]
 
+
+        # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data  wheel pip python-dateutil  setuptools setuptools_scm cffi 'setuptools_rust' 'bcrypt >= 4'
+      - python3-modules.json
 
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
