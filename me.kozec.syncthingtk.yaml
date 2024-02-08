@@ -85,10 +85,8 @@ modules:
       - rust-sources.json
       - type: git
         url: https://github.com/pyca/bcrypt.git
-          # 4.0.1 is broken, because it misses the base64 dependency.
-          #tag: 4.0.1
-          #commit: 98141be0809acd4accd1193f2c3b8cb9e29f022a
-        commit: ef701cd546a03ec8681df2eb4e3ea7390b621cfd
+        tag: 4.1.2
+        commit: b9223e61e2aec6f2d4841e3fa1f8e5d1ab7e4b61
 
     modules:
         # setup caching
