@@ -61,8 +61,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b7/f4/6a90020cd2d93349b442bfcb657d0dc91eee65491600b2cb1d388bc98e6b/typing_extensions-4.9.0-py3-none-any.whl",
-                    "sha256": "af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd",
+                    "url": "https://files.pythonhosted.org/packages/f9/de/dc04a3ea60b22624b51c703a84bbe0184abcd1d0b9bc8074b5d6b7ab90bb/typing_extensions-4.10.0-py3-none-any.whl",
+                    "sha256": "69b1a937c3a517342112fb4c6df7e72fc39a38e7891a5730ed4985b5214b5475",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "typing_extensions",
@@ -118,8 +118,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e0/34/d88a7ceb193fbcee6c8992d1b1e33ed20361027e07fea1676efc45ec7a43/setuptools_rust-1.8.1-py3-none-any.whl",
-                    "sha256": "b5324493949ccd6aa0c03890c5f6b5f02de4512e3ac1697d02e9a6c02b18aa8e",
+                    "url": "https://files.pythonhosted.org/packages/f7/7f/8b1c33598b03ad612b8ced223f9ca54076b789fabf5a66ce37cc096d9cf7/setuptools_rust-1.9.0-py3-none-any.whl",
+                    "sha256": "409caf49dcf7ad9bd510b4bf4011fbad504e745fae98f57fe1c06f3a97719638",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_rust",
