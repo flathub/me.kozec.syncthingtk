@@ -80,8 +80,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz",
-                    "sha256": "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0",
+                    "url": "https://files.pythonhosted.org/packages/1e/bf/82c351342972702867359cfeba5693927efe0a8dd568165490144f554b18/cffi-1.17.0.tar.gz",
+                    "sha256": "f3157624b7558b914cb039fd1af735e5e8049a87c817cc215109ad1c8779df76",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "cffi"
@@ -118,8 +118,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f7/7f/8b1c33598b03ad612b8ced223f9ca54076b789fabf5a66ce37cc096d9cf7/setuptools_rust-1.9.0-py3-none-any.whl",
-                    "sha256": "409caf49dcf7ad9bd510b4bf4011fbad504e745fae98f57fe1c06f3a97719638",
+                    "url": "https://files.pythonhosted.org/packages/43/3c/434984fca14c73e16a763f59424f06051758a01bb4d19e3f6470693790be/setuptools_rust-1.10.1-py3-none-any.whl",
+                    "sha256": "3837616cc0a7705b2c44058f626c97f774eeb980f28427c16ece562661bc20c5",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_rust",
