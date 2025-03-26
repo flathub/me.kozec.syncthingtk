@@ -123,8 +123,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libnotify.git
-        tag: 0.8.3
-        commit: 6083790f9e0f1827147ecd8799c4dced0e86a877
+        tag: 0.8.4
+        commit: 570982f616838abba6bdd8ca2bdb2f32f3b1d1de
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
