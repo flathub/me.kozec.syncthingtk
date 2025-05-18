@@ -31,8 +31,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl",
-                    "sha256": "09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759",
+                    "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+                    "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "packaging",
@@ -41,8 +41,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/a0/b9/1906bfeb30f2fc13bb39bf7ddb8749784c05faadbd18a21cf141ba37bff2/setuptools_scm-8.1.0-py3-none-any.whl",
-                    "sha256": "897a3226a6fd4a6eb2f068745e49733261a21f70b1bb28fce0339feb978d9af3",
+                    "url": "https://files.pythonhosted.org/packages/ab/ac/8f96ba9b4cfe3e4ea201f23f4f97165862395e9331a424ed325ae37024a8/setuptools_scm-8.3.1-py3-none-any.whl",
+                    "sha256": "332ca0d43791b818b841213e76b1971b7711a960761c5bea5fc5cdb5196fbce3",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_scm",
@@ -61,8 +61,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
-                    "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+                    "url": "https://files.pythonhosted.org/packages/8b/54/b1ae86c0973cc6f0210b53d508ca3641fb6d0c56823f288d108bc7ab3cc8/typing_extensions-4.13.2-py3-none-any.whl",
+                    "sha256": "a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "typing_extensions",
@@ -118,8 +118,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/97/09/3da290ba3934c7003d3a178840579989a7fcfa5bd23f50dd7f2ff27f30e1/setuptools_rust-1.10.2-py3-none-any.whl",
-                    "sha256": "4b39c435ae9670315d522ed08fa0e8cb29f2a6048033966b6be2571a90ce4f1c",
+                    "url": "https://files.pythonhosted.org/packages/b3/01/37e1376f80578882e4f2d451f57d1fb42a599832057a123f57d9f26395c8/setuptools_rust-1.11.1-py3-none-any.whl",
+                    "sha256": "5eaaddaed268dc24a527ffa659ce56b22d3cf17b781247b779efd611031fe8ea",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_rust",
