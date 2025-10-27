@@ -1,7 +1,7 @@
 app-id: me.kozec.syncthingtk
 
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -67,7 +67,7 @@ modules:
         url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
         sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
 
-  - shared-modules/dbus-glib/dbus-glib-0.110.json
+  - shared-modules/dbus-glib/dbus-glib.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
 
   # There's also https://github.com/flathub/org.thonny.Thonny/blob/7f38ec42e3f824e93fff7f1745632989c12985ed/org.thonny.Thonny.yaml#L212
