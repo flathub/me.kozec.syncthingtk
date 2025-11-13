@@ -1,7 +1,7 @@
 app-id: me.kozec.syncthingtk
 
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -70,46 +70,15 @@ modules:
   - shared-modules/dbus-glib/dbus-glib.json
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
 
-  # There's also https://github.com/flathub/org.thonny.Thonny/blob/7f38ec42e3f824e93fff7f1745632989c12985ed/org.thonny.Thonny.yaml#L212
   - name: python3-bcrypt
     buildsystem: simple
     build-commands:
-      - echo $PATH
-      - rustc --version
-      - pip3 show setuptools
-
-      - python3 setup.py build
-      - python3 setup.py install "--prefix=${FLATPAK_DEST}"
-      #- pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" "--prefix=${FLATPAK_DEST}" .
+      - pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST}
+        bcrypt
     sources:
-      - rust-sources.json
-      - type: git
-        url: https://github.com/pyca/bcrypt.git
-        tag: 4.1.2
-        commit: b9223e61e2aec6f2d4841e3fa1f8e5d1ab7e4b61
-
-    modules:
-        # setup caching
-      - name: sccache
-        buildsystem: simple
-        build-commands:
-          - install -Dma+rwx sccache /app/bin/sccache
-        cleanup:
-          - /bin/sccache
-        sources:
-          - type: archive
-            url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-x86_64-unknown-linux-musl.tar.gz
-            sha256: e5d03a9aa3b9fac7e490391bbe22d4f42c840d31ef9eaf127a03101930cbb7ca
-            only-arches: [x86_64]
-
-          - type: archive
-            url: https://github.com/mozilla/sccache/releases/download/v0.2.15/sccache-v0.2.15-aarch64-unknown-linux-musl.tar.gz
-            sha256: 90d91d21a767e3f558196dbd52395f6475c08de5c4951a4c8049575fa6894489
-            only-arches: [aarch64]
-
-
-        # flatpak-pip-generator --runtime org.freedesktop.Sdk//22.08 --checker-data  wheel pip python-dateutil  setuptools setuptools_scm cffi 'setuptools_rust' 'bcrypt >= 4'
-      - python3-modules.json
+      - type: file
+        url: https://files.pythonhosted.org/packages/dc/7f/1e36379e169a7df3a14a1c160a49b7b918600a6008de43ff20d479e6f4b5/bcrypt-4.3.0-cp39-abi3-manylinux_2_34_x86_64.whl
+        sha256: 531457e5c839d8caea9b589a1bcfe3756b0547d7814e9ce3d437f17da75c32b0
 
   # Pulling in libnotify again pretty much just for the GIR bindings.
   - name: libnotify
@@ -156,3 +125,8 @@ modules:
 
     cleanup:
       - /share/pixmaps
+
+    modules:
+      # ~/vcs/flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//25.08 --checker-data  --output python-dateutil  python-dateutil
+      - python-dateutil.json
+
