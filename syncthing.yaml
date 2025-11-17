@@ -17,7 +17,7 @@ build-commands:
     #go mod download -json > download.json
     env GOFLAGS=-mod=vendor go run build.go -no-upgrade build
   - install -Dm755 -t /app/bin syncthing
-  - syncthing -version
+  - syncthing --version
 
 sources:
   - type: archive
