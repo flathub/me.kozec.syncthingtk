@@ -29,4 +29,6 @@ sources:
       type: anitya
       project-id: 11814
       url-template: https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-source-v$version.tar.gz
+      versions:
+        <: 2
 
