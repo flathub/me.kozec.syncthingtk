@@ -132,8 +132,7 @@ modules:
         path: 0001-appdata-remove-URL-to-make-the-validator-stop-compla.patch
 
       - type: patch
-        path: 109.patch
-        # https://patch-diff.githubusercontent.com/raw/syncthing-gtk/syncthing-gtk/pull/109.patch
+        path: 103.patch
 
     cleanup:
       - /share/pixmaps

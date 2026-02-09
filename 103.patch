@@ -1,0 +1,212 @@
+From 90a25f4ad40cd31f86b7743123a6c2761addb09d Mon Sep 17 00:00:00 2001
+From: Anthony Rubick <68485672+AnthonyMichaelTDM@users.noreply.github.com>
+Date: Fri, 15 Aug 2025 16:08:26 -0700
+Subject: [PATCH 1/4] Update cli args in app.py
+
+fix #102
+---
+ syncthing_gtk/app.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/syncthing_gtk/app.py b/syncthing_gtk/app.py
+index dd744a8..f57e4e7 100644
+--- a/syncthing_gtk/app.py
++++ b/syncthing_gtk/app.py
+@@ -501,7 +501,7 @@ def ct_process(self):
+         Sets self.process, adds related handlers and starts daemon.
+         Just so I don't have to write same code all over the place.
+         """
+-        cmdline = [self.config["syncthing_binary"], "-no-browser"]
++        cmdline = [self.config["syncthing_binary"], "--no-browser"]
+         vars, preargs, args = parse_config_arguments(self.config["syncthing_arguments"])
+         cmdline = preargs + cmdline + args
+         if self.home_dir_override:
+
+From 5cc33850d86116317b98cbeb938c76217a486abf Mon Sep 17 00:00:00 2001
+From: Anthony Rubick <68485672+AnthonyMichaelTDM@users.noreply.github.com>
+Date: Mon, 18 Aug 2025 16:11:57 -0500
+Subject: [PATCH 2/4] add helper to get the daemon's version string
+
+---
+ syncthing_gtk/tools.py | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+
+diff --git a/syncthing_gtk/tools.py b/syncthing_gtk/tools.py
+index a6f7919..6c877de 100644
+--- a/syncthing_gtk/tools.py
++++ b/syncthing_gtk/tools.py
+@@ -18,7 +18,7 @@
+ from base64 import b32decode
+ from datetime import timedelta, tzinfo
+ from gettext import gettext as _
+-from subprocess import Popen
++from subprocess import Popen, PIPE
+ 
+ import __main__
+ from dateutil import parser
+@@ -49,6 +49,7 @@
+ 
+ LUHN_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"  # Characters valid in device id
+ VERSION_NUMBER = re.compile(r"^v?([0-9\.]*).*")
++DAEMON_VERSION_STRING = re.compile(r"^syncthing v(\d+\.\d+\.\d+) .*")
+ LOG_FORMAT = "%(levelname)s %(name)-13s %(message)s"
+ GETTEXT_DOMAIN = "syncthing-gtk"  # used by "_" function
+ DESKTOP_FILE = """[Desktop Entry]
+@@ -387,6 +388,22 @@ def compare_version(a, b):
+     return parse_version(a) >= parse_version(b)
+ 
+ 
++def get_daemon_version() -> str | None:
++    """
++    Returns the version of the installed syncthing daemon.
++    """
++
++    # run `syncthing --version` and parse the output
++    p = Popen(["syncthing", "--version"], stdout=PIPE, stderr=PIPE)
++    out, _ = p.communicate()
++    if p.returncode != 0:
++        return None
++    match = DAEMON_VERSION_STRING.match(out.decode("utf-8"))
++    if not match:
++        return None
++    return match.group(1)
++
++
+ def get_config_dir():
+     """
+     Returns ~/.config, %APPDATA% or whatever has user set as
+
+From bbe284a71461b44d5a9c6300a754fe0175382d92 Mon Sep 17 00:00:00 2001
+From: Anthony Rubick <68485672+AnthonyMichaelTDM@users.noreply.github.com>
+Date: Mon, 18 Aug 2025 16:17:15 -0500
+Subject: [PATCH 3/4] use different cli args depending on version detection
+
+---
+ syncthing_gtk/app.py | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/syncthing_gtk/app.py b/syncthing_gtk/app.py
+index f57e4e7..406d770 100644
+--- a/syncthing_gtk/app.py
++++ b/syncthing_gtk/app.py
+@@ -45,6 +45,7 @@
+     check_daemon_running,
+     compare_version,
+     generate_folder_id,
++    get_daemon_version,
+     parse_config_arguments,
+     set_logging_level,
+     sizeof_fmt,
+@@ -501,11 +502,20 @@ def ct_process(self):
+         Sets self.process, adds related handlers and starts daemon.
+         Just so I don't have to write same code all over the place.
+         """
+-        cmdline = [self.config["syncthing_binary"], "--no-browser"]
++        major_version: int
++        if version := get_daemon_version():
++            major_version = int(version.split(".")[0])
++        else:
++            # fall back to post-v2.0 behavior since the --version flag doesn't work on v2.0.0 and v2.0.1
++            log.warning("Failed to get daemon version, falling back to post-v2.0 behavior")
++            major_version = 2
++        post_v2: bool = major_version >= 2
++
++        cmdline = [self.config["syncthing_binary"], "--no-browser" if post_v2 else "-no-browser"]
+         vars, preargs, args = parse_config_arguments(self.config["syncthing_arguments"])
+         cmdline = preargs + cmdline + args
+         if self.home_dir_override:
+-            cmdline += ["-home", self.home_dir_override]
++            cmdline += ["--home" if post_v2 else "-home", self.home_dir_override]
+ 
+         self.process = DaemonProcess(cmdline, self.config["daemon_priority"], self.config["max_cpus"], env=vars)
+         self.process.connect("failed", self.cb_daemon_startup_failed)
+
+From a352701fd1eb82261936e912aec3e6aabc3c76c2 Mon Sep 17 00:00:00 2001
+From: Anthony Rubick <68485672+AnthonyMichaelTDM@users.noreply.github.com>
+Date: Sun, 28 Sep 2025 13:26:25 -0500
+Subject: [PATCH 4/4] revert version checking
+
+---
+ syncthing_gtk/app.py   | 14 ++------------
+ syncthing_gtk/tools.py | 19 +------------------
+ 2 files changed, 3 insertions(+), 30 deletions(-)
+
+diff --git a/syncthing_gtk/app.py b/syncthing_gtk/app.py
+index 406d770..1dde4d0 100644
+--- a/syncthing_gtk/app.py
++++ b/syncthing_gtk/app.py
+@@ -45,7 +45,6 @@
+     check_daemon_running,
+     compare_version,
+     generate_folder_id,
+-    get_daemon_version,
+     parse_config_arguments,
+     set_logging_level,
+     sizeof_fmt,
+@@ -502,20 +501,11 @@ def ct_process(self):
+         Sets self.process, adds related handlers and starts daemon.
+         Just so I don't have to write same code all over the place.
+         """
+-        major_version: int
+-        if version := get_daemon_version():
+-            major_version = int(version.split(".")[0])
+-        else:
+-            # fall back to post-v2.0 behavior since the --version flag doesn't work on v2.0.0 and v2.0.1
+-            log.warning("Failed to get daemon version, falling back to post-v2.0 behavior")
+-            major_version = 2
+-        post_v2: bool = major_version >= 2
+-
+-        cmdline = [self.config["syncthing_binary"], "--no-browser" if post_v2 else "-no-browser"]
++        cmdline = [self.config["syncthing_binary"], "--no-browser"]
+         vars, preargs, args = parse_config_arguments(self.config["syncthing_arguments"])
+         cmdline = preargs + cmdline + args
+         if self.home_dir_override:
+-            cmdline += ["--home" if post_v2 else "-home", self.home_dir_override]
++            cmdline += ["--home", self.home_dir_override]
+ 
+         self.process = DaemonProcess(cmdline, self.config["daemon_priority"], self.config["max_cpus"], env=vars)
+         self.process.connect("failed", self.cb_daemon_startup_failed)
+diff --git a/syncthing_gtk/tools.py b/syncthing_gtk/tools.py
+index 6c877de..a6f7919 100644
+--- a/syncthing_gtk/tools.py
++++ b/syncthing_gtk/tools.py
+@@ -18,7 +18,7 @@
+ from base64 import b32decode
+ from datetime import timedelta, tzinfo
+ from gettext import gettext as _
+-from subprocess import Popen, PIPE
++from subprocess import Popen
+ 
+ import __main__
+ from dateutil import parser
+@@ -49,7 +49,6 @@
+ 
+ LUHN_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"  # Characters valid in device id
+ VERSION_NUMBER = re.compile(r"^v?([0-9\.]*).*")
+-DAEMON_VERSION_STRING = re.compile(r"^syncthing v(\d+\.\d+\.\d+) .*")
+ LOG_FORMAT = "%(levelname)s %(name)-13s %(message)s"
+ GETTEXT_DOMAIN = "syncthing-gtk"  # used by "_" function
+ DESKTOP_FILE = """[Desktop Entry]
+@@ -388,22 +387,6 @@ def compare_version(a, b):
+     return parse_version(a) >= parse_version(b)
+ 
+ 
+-def get_daemon_version() -> str | None:
+-    """
+-    Returns the version of the installed syncthing daemon.
+-    """
+-
+-    # run `syncthing --version` and parse the output
+-    p = Popen(["syncthing", "--version"], stdout=PIPE, stderr=PIPE)
+-    out, _ = p.communicate()
+-    if p.returncode != 0:
+-        return None
+-    match = DAEMON_VERSION_STRING.match(out.decode("utf-8"))
+-    if not match:
+-        return None
+-    return match.group(1)
+-
+-
+ def get_config_dir():
+     """
+     Returns ~/.config, %APPDATA% or whatever has user set as
