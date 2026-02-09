@@ -113,6 +113,9 @@ modules:
       - type: patch
         path: 0001-appdata-remove-URL-to-make-the-validator-stop-compla.patch
 
+      - type: patch
+        path: 103.patch
+
     cleanup:
       - /share/pixmaps
 
