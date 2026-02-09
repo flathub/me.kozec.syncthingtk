@@ -110,9 +110,6 @@ modules:
           type: git
           pattern: \d\.\d\.\d\.\d
 
-      - type: patch
-        path: 0001-appdata-remove-URL-to-make-the-validator-stop-compla.patch
-
     cleanup:
       - /share/pixmaps
 
