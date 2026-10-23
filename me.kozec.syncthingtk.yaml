@@ -104,8 +104,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/syncthing-gtk/syncthing-gtk.git
-        commit: 3118560fe15e7b2c638c09c66c9be21725bfe2dc
-        tag: 0.9.4.5
+        commit: 095eb232ab7244fd09e825a9c32c0a06913adf15
+        tag: v0.10.0
         x-checker-data:
           type: git
           pattern: \d\.\d\.\d\.\d
