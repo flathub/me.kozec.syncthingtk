@@ -64,7 +64,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
+        url: 
+          https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz
         sha256: 555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd
 
   - shared-modules/dbus-glib/dbus-glib.json
@@ -77,13 +78,15 @@ modules:
         bcrypt
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/4d/4d/c43332dcaaddb7710a8ff5269fcccba97ed3c85987ddaa808db084267b9a/bcrypt-4.3.0-cp39-abi3-manylinux_2_34_aarch64.whl
+        url: 
+          https://files.pythonhosted.org/packages/4d/4d/c43332dcaaddb7710a8ff5269fcccba97ed3c85987ddaa808db084267b9a/bcrypt-4.3.0-cp39-abi3-manylinux_2_34_aarch64.whl
         sha256: 3004df1b323d10021fda07a813fd33e0fd57bef0e9a480bb143877f6cba996fe
         only-arches:
           - aarch64
 
       - type: file
-        url: https://files.pythonhosted.org/packages/dc/7f/1e36379e169a7df3a14a1c160a49b7b918600a6008de43ff20d479e6f4b5/bcrypt-4.3.0-cp39-abi3-manylinux_2_34_x86_64.whl
+        url: 
+          https://files.pythonhosted.org/packages/dc/7f/1e36379e169a7df3a14a1c160a49b7b918600a6008de43ff20d479e6f4b5/bcrypt-4.3.0-cp39-abi3-manylinux_2_34_x86_64.whl
         sha256: 531457e5c839d8caea9b589a1bcfe3756b0547d7814e9ce3d437f17da75c32b0
         only-arches:
           - x86_64
@@ -104,8 +107,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/syncthing-gtk/syncthing-gtk.git
-        commit: 3118560fe15e7b2c638c09c66c9be21725bfe2dc
-        tag: 0.9.4.5
+        commit: 095eb232ab7244fd09e825a9c32c0a06913adf15
+        tag: v0.10.0
         x-checker-data:
           type: git
           pattern: \d\.\d\.\d\.\d
